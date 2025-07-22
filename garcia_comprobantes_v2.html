@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presentación Detallada: Plan de Implementación - García Construcciones</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="icon" href="https://www.evotecnia.com.ar/assets/img/favicon1.png" type="image/png">
+
+    <style>
+        /* Estilos generales y de escalado */
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: #000; /* Fondo oscuro para el área fuera de la presentación */
+            font-family: 'Poppins', sans-serif;
+        }
+
+        #presentation-container {
+            width: 1920px;
+            height: 1080px;
+            transform-origin: top left;
+            background-color: #F7F7F7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            box-sizing: border-box;
+        }
+
+        /* Colores personalizados */
+        .bg-evotecnia-verde { background-color: #00B0A8; }
+        .text-evotecnia-verde { color: #00B0A8; }
+        .border-evotecnia-verde { border-color: #00B0A8; }
+        .bg-evotecnia-azul { background-color: #2A3F54; }
+        .text-evotecnia-azul { color: #2A3F54; }
+        .text-gris-principal { color: #333333; }
+        .text-gris-secundario { color: #73879C; }
+        .bg-gris-secundario { background-color: #73879C; }
+
+        /* Contenedor del slide deck */
+        #slide-deck {
+            background-color: white;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            width: 100%;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Estilo para las diapositivas */
+        .slide {
+            display: none;
+            flex-grow: 1;
+            padding: 3rem 4rem 6rem 4rem;
+            overflow-y: auto;
+            justify-content: center;
+            flex-direction: column;
+            position: relative;
+        }
+        .slide.active {
+            display: flex;
+            animation: fadeIn 0.6s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Estilos para la navegación integrada */
+        .navigation-bar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            background-color: #f8fafc;
+            border-top: 1px solid #e5e7eb;
+        }
+
+        .navigation-button {
+            background-color: white;
+            border: 1px solid #ddd;
+            color: #73879C;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.375rem;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.2s ease;
+        }
+        .navigation-button:hover:not(:disabled) {
+            background-color: #00B0A8;
+            color: white;
+            border-color: #00B0A8;
+        }
+        .navigation-button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .slide-number {
+            color: #73879C;
+            font-size: 1rem;
+        }
+
+        #evotecnia-logo {
+            position: absolute;
+            top: 1.5rem;
+            left: 1.5rem;
+            opacity: 0.5;
+            height: 40px;
+            z-index: 10;
+        }
+        
+        .home-button {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            z-index: 10;
+        }
+        
+        .index-item {
+            cursor: pointer;
+        }
+        
+        /* Estilos para flujo de trabajo */
+        .workflow-step {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            z-index: 1;
+        }
+        .workflow-step .step-icon {
+            border: 3px solid #00B0A8;
+            background-color: #fff;
+            color: #00B0A8;
+        }
+        .stage-badge {
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div id="presentation-container">
+        <div id="slide-deck">
+            <img id="evotecnia-logo" src="https://www.evotecnia.com.ar/assets/img/favicon1.png" alt="Logo de Evotecnia">
+
+            <!-- Diapositiva 1: Portada -->
+            <div id="slide-1" class="slide active">
+                <div class="text-center flex-grow flex flex-col justify-center">
+                    <h1 class="text-6xl md:text-7xl font-bold text-evotecnia-azul mb-6">Plan de Implementación: <br>Gestión Operativa y Financiera para <span class="text-evotecnia-verde">García Construcciones</span></h1>
+                    <p class="text-3xl md:text-4xl text-gris-secundario font-light mb-16">Transformando tareas manuales en eficiencia y control.</p>
+                    <div class="flex items-center justify-center space-x-12">
+                        <img src="https://www.construccionesgarcia.com.ar/wp-content/uploads/2021/07/original.png" alt="Logo de García Construcciones" class="client-logo" style="max-height: 90px;" onerror="this.onerror=null;this.src='https://placehold.co/200x60/EFEFEF/333333?text=Logo+Garc%C3%ADa+Const.';">
+                        <span class="text-5xl font-light text-gray-300">+</span>
+                        <img src="https://www.evotecnia.com.ar/assets/img/fullcolor-completo.png" alt="Logo de Evotecnia" class="evotecnia-logo-portada" style="max-height: 80px;">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Diapositiva 2: Índice -->
+            <div id="slide-2" class="slide">
+                <div class="flex-grow flex flex-col justify-center">
+                    <h2 class="text-6xl font-bold text-evotecnia-azul mb-16 text-center">¿Qué Abordaremos Hoy?</h2>
+                    <div class="space-y-6">
+                        <div class="p-3 rounded-md hover:bg-gray-50 index-item flex items-center" data-target-slide="2">
+                            <div class="flex-shrink-0 bg-evotecnia-verde text-white rounded-full h-12 w-12 flex items-center justify-center font-bold text-2xl mr-6">1</div>
+                            <span class="text-3xl text-gris-principal">Puntos de dolor en la Operación Diaria</span>
+                        </div>
+                        <div class="p-3 rounded-md hover:bg-gray-50 index-item flex items-center" data-target-slide="3">
+                            <div class="flex-shrink-0 bg-evotecnia-verde text-white rounded-full h-12 w-12 flex items-center justify-center font-bold text-2xl mr-6">2</div>
+                            <span class="text-3xl text-gris-principal">Propuesta General: <span class="font-light text-gris-secundario">Digitalización y Automatización</span></span>
+                        </div>
+                        <div class="p-3 rounded-md hover:bg-gray-50 index-item flex items-center" data-target-slide="4">
+                            <div class="flex-shrink-0 bg-evotecnia-verde text-white rounded-full h-12 w-12 flex items-center justify-center font-bold text-2xl mr-6">3</div>
+                            <span class="text-3xl text-gris-principal">Flujo de carga de comprobantes</span>
+                        </div>
+                        <div class="p-3 rounded-md hover:bg-gray-50 index-item flex items-center" data-target-slide="5">
+                            <div class="flex-shrink-0 bg-evotecnia-verde text-white rounded-full h-12 w-12 flex items-center justify-center font-bold text-2xl mr-6">4</div>
+                            <span class="text-3xl text-gris-principal">Flujo de Gestión de Pagos</span>
+                        </div>
+                         <div class="p-3 rounded-md hover:bg-gray-50 index-item flex items-center" data-target-slide="6">
+                            <div class="flex-shrink-0 bg-evotecnia-verde text-white rounded-full h-12 w-12 flex items-center justify-center font-bold text-2xl mr-6">5</div>
+                            <span class="text-3xl text-gris-principal">Beneficios Clave y Próximos Pasos</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Diapositiva 3: Puntos de dolor -->
+            <div id="slide-3" class="slide">
+                 <button class="home-button navigation-button" data-target-slide="0">Inicio</button>
+                <div class="flex-grow flex flex-col justify-center">
+                    <h2 class="text-6xl font-bold text-evotecnia-azul mb-12 text-center">Puntos de dolor en la Operación Diaria</h2>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="bg-white p-6 rounded-lg shadow-md shadow-red-100 flex flex-col items-center text-center">
+                            <svg width="24px" height="24px" stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mb-4 text-red-500"><path d="M7 6L17 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M7 9L17 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M9 17H15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M3 12H2.6C2.26863 12 2 12.2686 2 12.6V21.4C2 21.7314 2.26863 22 2.6 22H21.4C21.7314 22 22 21.7314 22 21.4V12.6C22 12.2686 21.7314 12 21.4 12H21M3 12V2.6C3 2.26863 3.26863 2 3.6 2H20.4C20.7314 2 21 2.26863 21 2.6V12M3 12H21" stroke="currentColor" stroke-width="1.5"></path></svg>
+                            <h3 class="font-semibold text-xl text-gris-principal mb-2">Carga Manual de Comprobantes</h3>
+                            <p class="text-lg text-gris-secundario">Tarea repetitiva y lenta que consume tiempo, con cálculos manuales de IVA y percepciones, generando errores.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-md shadow-red-100 flex flex-col items-center text-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mb-4 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                            <h3 class="font-semibold text-xl text-gris-principal mb-2">Control de compras / gastos manual</h3>
+                            <p class="text-lg text-gris-secundario">Proceso de autorización engorroso y dependiente, que retrasa la generación de información crucial.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-md shadow-red-100 flex flex-col items-center text-center">
+                            <svg width="24px" height="24px" stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mb-4 text-red-500"><path d="M3 19V5C3 3.89543 3.89543 3 5 3H19C20.1046 3 21 3.89543 21 5V19C21 20.1046 20.1046 21 19 21H5C3.89543 21 3 20.1046 3 19Z" stroke="currentColor" stroke-width="1.5"></path><path d="M13.8562 13.8497C14.4747 13.2295 14.8571 12.3737 14.8571 11.4286C14.8571 9.53502 13.3221 8 11.4286 8C9.53502 8 8 9.53502 8 11.4286C8 13.3221 9.53502 14.8571 11.4286 14.8571C12.377 14.8571 13.2355 14.4721 13.8562 13.8497ZM13.8562 13.8497L16 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                            <h3 class="font-semibold text-xl text-gris-principal mb-2">Difícil ver datos de venta</h3>
+                            <p class="text-lg text-gris-secundario">Sistema actual no agiliza consulta rápida de ventas del día, afectando gestión de stock y caja.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-md shadow-red-100 flex flex-col items-center text-center">
+                            <svg width="24px" height="24px" viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mb-4 text-red-500"><path d="M20 12V5.74853C20 5.5894 19.9368 5.43679 19.8243 5.32426L16.6757 2.17574C16.5632 2.06321 16.4106 2 16.2515 2H4.6C4.26863 2 4 2.26863 4 2.6V21.4C4 21.7314 4.26863 22 4.6 22H11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M8 10H16M8 6H12M8 14H11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M17.9541 16.9394L18.9541 15.9394C19.392 15.5015 20.102 15.5015 20.5399 15.9394V15.9394C20.9778 16.3773 20.9778 17.0873 20.5399 17.5252L19.5399 18.5252M17.9541 16.9394L14.963 19.9305C14.8131 20.0804 14.7147 20.2741 14.6821 20.4835L14.4394 22.0399L15.9957 21.7973C16.2052 21.7646 16.3988 21.6662 16.5487 21.5163L19.5399 18.5252M17.9541 16.9394L19.5399 18.5252" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M16 2V5.4C16 5.73137 16.2686 6 16.6 6H20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                            <h3 class="font-semibold text-xl text-gris-principal mb-2">Remitos de Camioneros Manuales</h3>
+                            <p class="text-lg text-gris-secundario">Remitos en papel que requieren transcripción manual, redundante, lento y con mucho uso de papel.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Diapositiva 4: Propuesta General -->
+            <div id="slide-4" class="slide">
+                 <button class="home-button navigation-button" data-target-slide="0">Inicio</button>
+                <div class="flex-grow flex flex-col justify-center">
+                    <h2 class="text-6xl font-bold text-evotecnia-azul mb-4 text-center">Propuesta General</h2>
+                    <p class="text-3xl text-gris-secundario font-light mb-12 text-center">Digitalización y Automatización para el Control Operativo</p>
+                    <div class="grid md:grid-cols-3 gap-8 text-center">
+                        <div class="bg-white rounded-lg p-6 flex flex-col items-center justify-center shadow-md shadow-[#00B0A8]/30 h-full">
+                            <svg width="24px" height="24px" stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mb-4 text-evotecnia-verde"><path d="M12 22V13M12 13L15.5 16.5M12 13L8.5 16.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M20 17.6073C21.4937 17.0221 23 15.6889 23 13C23 9 19.6667 8 18 8C18 6 18 2 12 2C6 2 6 6 6 8C4.33333 8 1 9 1 13C1 15.6889 2.50628 17.0221 4 17.6073" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                            <h3 class="font-semibold text-2xl mb-2 text-gris-principal">Centralización Inteligente</h3>
+                            <p class="text-gris-secundario text-xl">Un punto único para todos los documentos y datos.</p>
+                        </div>
+                        <div class="bg-white rounded-lg p-6 flex flex-col items-center justify-center shadow-md shadow-[#00B0A8]/30 h-full">
+                             <svg width="24px" height="24px" viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mb-4 text-evotecnia-verde"><path d="M7 14C5.34315 14 4 15.3431 4 17C4 18.6569 5.34315 20 7 20C7.35064 20 7.68722 19.9398 8 19.8293" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M4.26392 15.6046C2.9243 14.9582 2.00004 13.587 2.00004 12C2.00004 10.7883 2.53877 9.70251 3.38978 8.96898" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M3.42053 8.8882C3.1549 8.49109 3 8.01363 3 7.5C3 6.11929 4.11929 5 5.5 5C6.06291 5 6.58237 5.18604 7.00024 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M7.23769 5.56533C7.08524 5.24215 7 4.88103 7 4.5C7 3.11929 8.11929 2 9.5 2C10.8807 2 12 3.11929 12 4.5V20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M8 20C8 21.1046 8.89543 22 10 22C11.1046 22 12 21.1046 12 20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M12 7C12 8.65685 13.3431 10 15 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M17 14C18.6569 14 20 15.3431 20 17C20 18.6569 18.6569 20 17 20C16.6494 20 16.3128 19.9398 16 19.8293" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M19.7361 15.6046C21.0757 14.9582 22 13.587 22 12C22 10.7883 21.4612 9.70251 20.6102 8.96898" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M20.5795 8.8882C20.8451 8.49109 21 8.01363 21 7.5C21 6.11929 19.8807 5 18.5 5C17.9371 5 17.4176 5.18604 16.9998 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M12 4.5C12 3.11929 13.1193 2 14.5 2C15.8807 2 17 3.11929 17 4.5C17 4.88103 16.9148 5.24215 16.7623 5.56533" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M16 20C16 21.1046 15.1046 22 14 22C12.8954 22 12 21.1046 12 20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                            <h3 class="font-semibold text-2xl mb-2 text-gris-principal">Automatización con IA</h3>
+                            <p class="text-gris-secundario text-xl">Minimiza la carga manual, los errores y el uso de papel.</p>
+                        </div>
+                        <div class="bg-white rounded-lg p-6 flex flex-col items-center justify-center shadow-md shadow-[#00B0A8]/30 h-full">
+                            <svg width="24px" height="24px" stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mb-4 text-evotecnia-verde"><path d="M20 20H4V4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M4 16.5L12 9L15 12L19.5 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                            <h3 class="font-semibold text-2xl mb-2 text-gris-principal">Reportes en Tiempo Real</h3>
+                            <p class="text-gris-secundario text-xl">Dashboards Operativos y Gerenciales para acceso instantáneo.</p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-3 gap-8 mt-6">
+                        <div class="col-span-1 bg-evotecnia-verde text-white font-semibold py-3 rounded-md text-center text-xl">ETAPA 1</div>
+                        <div class="col-span-2 bg-gris-secundario text-white font-semibold py-3 rounded-md text-center text-xl">ETAPA 2</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Diapositiva 5: Flujo de Digitalización y Validación (Zigzag - FINAL) -->
+            <div id="slide-5" class="slide">
+                <button class="home-button navigation-button" data-target-slide="0">Inicio</button>
+                <div class="flex-grow flex flex-col justify-center">
+                    <div class="text-center mb-12">
+                        <h2 class="text-5xl font-bold text-evotecnia-azul mb-4">Flujo de carga de comprobantes</h2>
+                        <p class="text-2xl text-gris-secundario font-light">Pasos para la pre-carga y validacion de comprobantes.</p>
+                    </div>
+                    
+                    <div class="relative w-full px-4" style="height: 480px;">
+                        <!-- SVG Path -->
+                        <svg class="absolute top-0 left-0 w-full h-full z-0" viewBox="0 0 1600 480" preserveAspectRatio="none">
+                            <path d="M133 126 L400 354 L666 126 L932 354 L1198 126 L1464 354" stroke="#00B0A8" stroke-width="4" fill="none" stroke-dasharray="15,15" stroke-opacity="0.3"/>
+                        </svg>
+
+                        <!-- Pasos -->
+                        <div class="relative flex justify-between items-center h-full">
+                            <!-- Step 1 (top) -->
+                            <div class="workflow-step w-1/6 self-start">
+                                <div class="stage-badge bg-evotecnia-verde">ETAPA 1</div>
+                                <div class="step-icon h-28 w-28 rounded-full flex items-center justify-center mb-4"><svg xmlns="http://www.w3.org/2000/svg" class="h-14 w-14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg></div>
+                                <h3 class="font-semibold text-xl text-gris-principal">1. Envío de Comprobantes</h3>
+                                <p class="text-lg text-gris-secundario">El personal envía los comprobantes (fotos/PDF) por mail o a través de un chatbot, que opcionalmente puede solicitarle infromacion de manera guiada.</p>
+                            </div>
+                            <!-- Step 2 (bottom) -->
+                             <div class="workflow-step w-1/6 self-end">
+                                <div class="stage-badge bg-evotecnia-verde">ETAPA 1</div>
+                                <div class="step-icon h-28 w-28 rounded-full flex items-center justify-center mb-4"><svg xmlns="http://www.w3.org/2000/svg" class="h-14 w-14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" /></svg></div>
+                                <h3 class="font-semibold text-xl text-gris-principal">2. Recepción y Registro</h3>
+                                <p class="text-lg text-gris-secundario">El sistema recopila los archivos y crea un registro inicial para cada uno con la infromacion ya recopilada.</p>
+                            </div>
+                            <!-- Step 3 (top) -->
+                            <div class="workflow-step w-1/6 self-start">
+                                 <div class="stage-badge bg-evotecnia-verde">ETAPA 1</div>
+                                <div class="step-icon h-28 w-28 rounded-full flex items-center justify-center mb-4"><svg xmlns="http://www.w3.org/2000/svg" class="h-14 w-14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg></div>
+                                <h3 class="font-semibold text-xl text-gris-principal">3. Tablero de Pendientes</h3>
+                                <p class="text-lg text-gris-secundario">Cada registro aparece en un tablero visual, listo para ser procesado.</p>
+                            </div>
+                            <!-- Step 4 (bottom) -->
+                            <div class="workflow-step w-1/6 self-end">
+                                <div class="stage-badge bg-gris-secundario">ETAPA 2</div>
+                                <div class="step-icon h-28 w-28 rounded-full flex items-center justify-center mb-4"><svg xmlns="http://www.w3.org/2000/svg" class="h-14 w-14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" /></svg></div>
+                                <h3 class="font-semibold text-xl text-gris-principal">4. Importación ARCA</h3>
+                                <p class="text-lg text-gris-secundario">En paralelo, se obtienen datos desde ARCA para el luego cruzar y validar la información.</p>
+                            </div>
+                            <!-- Step 5 (top) -->
+                            <div class="workflow-step w-1/6 self-start">
+                                <div class="stage-badge bg-gris-secundario">ETAPA 2</div>
+                                <div class="step-icon h-28 w-28 rounded-full flex items-center justify-center mb-4"><svg xmlns="http://www.w3.org/2000/svg" class="h-14 w-14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg></div>
+                                <h3 class="font-semibold text-xl text-gris-principal">5. Procesamiento con IA</h3>
+                                <p class="text-lg text-gris-secundario">La IA lee la imagen, extrae los datos y los cruza con la información de ARCA, intentando obtener y validar info como la del proveedor, montos totales y quizas conceptos.</p>
+                            </div>
+                            <!-- Step 6 (bottom) -->
+                            <div class="workflow-step w-1/6 self-end">
+                                <div class="stage-badge bg-gris-secundario">ETAPA 2</div>
+                                <div class="step-icon h-28 w-28 rounded-full flex items-center justify-center mb-4"><svg xmlns="http://www.w3.org/2000/svg" class="h-14 w-14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /><path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" /></svg></div>
+                                <h3 class="font-semibold text-xl text-gris-principal">6. Carga Final con 1-Clic</h3>
+                                <p class="text-lg text-gris-secundario">El operador puede revisar en el tablero los datos pre-cargados y con un clic confirma y genera el comprobante lo mas automaticamente posible.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Diapositiva 6: Flujo de Autorización y Pagos -->
+            <div id="slide-6" class="slide">
+                <button class="home-button navigation-button" data-target-slide="0">Inicio</button>
+                <div class="flex-grow flex flex-col justify-center">
+                    <h2 class="text-6xl font-bold text-evotecnia-azul mb-4 text-center">Flujo de Gestión de Pagos</h2>
+                    <p class="text-3xl text-gris-secundario font-light mb-16 text-center">Proceso de control y autorizacion de pagos de manera visual, agil y automatizada</p>
+                    
+                    <div class="flex items-start justify-center w-full space-x-8">
+                        <!-- Step 1 -->
+                        <div class="workflow-step w-1/3">
+                            <div class="stage-badge bg-gris-secundario">ETAPA 2</div>
+                            <div class="step-icon h-24 w-24 rounded-full flex items-center justify-center mb-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z" /></svg>
+                            </div>
+                            <h3 class="font-semibold text-xl text-gris-principal">1. Tablero de Autorizaciones</h3>
+                            <p class="text-lg text-gris-secundario">El mismo tablero ahora permite filtrar por "Pendiente de Autorización". El responsable ve claramente qué pagos necesitan su aprobación.</p>
+                        </div>
+                        <div class="flex items-center h-24 pt-12">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                        </div>
+                        <!-- Step 2 -->
+                        <div class="workflow-step w-1/3">
+                            <div class="stage-badge bg-gris-secundario">ETAPA 2</div>
+                            <div class="step-icon h-24 w-24 rounded-full flex items-center justify-center mb-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                            </div>
+                            <h3 class="font-semibold text-xl text-gris-principal">2. Circuito de Aprobación</h3>
+                            <p class="text-lg text-gris-secundario">El responsable recibe una notificación. Desde el tablero, puede aprobar, rechazar o consultar, dejando un registro de auditoría para cada acción.</p>
+                        </div>
+                        <div class="flex items-center h-24 pt-12">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                        </div>
+                        <!-- Step 3 -->
+                        <div class="workflow-step w-1/3">
+                            <div class="stage-badge bg-gris-secundario">ETAPA 2</div>
+                            <div class="step-icon h-24 w-24 rounded-full flex items-center justify-center mb-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
+                            </div>
+                            <h3 class="font-semibold text-xl text-gris-principal">3. Gestión de Pagos</h3>
+                            <p class="text-lg text-gris-secundario">Una vez autorizado, el comprobante queda listo para el circuito de pago final, con toda la trazabilidad documentada. <br><i>(Circuito a definir en conjunto)</i></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Diapositiva 7: Beneficios -->
+            <div id="slide-7" class="slide">
+                 <button class="home-button navigation-button" data-target-slide="0">Inicio</button>
+                <div class="flex-grow flex flex-col justify-center">
+                    <h2 class="text-6xl font-bold text-evotecnia-azul mb-12 text-center">Transformación Operativa: Beneficios y Plan</h2>
+                    <div class="mb-16">
+                        <h3 class="font-semibold text-3xl text-gris-principal mb-8">Beneficios Clave</h3>
+                        <ul class="space-y-4 text-2xl">
+                            <li class="flex items-start"><svg class="w-8 h-8 text-evotecnia-verde mr-4 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><div><strong class="font-semibold text-gris-principal">Eficiencia Operativa:</strong><span class="text-gris-secundario"> Menos tareas manuales, más tiempo para el negocio.</span></div></li>
+                            <li class="flex items-start"><svg class="w-8 h-8 text-evotecnia-verde mr-4 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><div><strong class="font-semibold text-gris-principal">Control Total:</strong><span class="text-gris-secundario"> Visibilidad en tiempo real de finanzas y operaciones.</span></div></li>
+                            <li class="flex items-start"><svg class="w-8 h-8 text-evotecnia-verde mr-4 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><div><strong class="font-semibold text-gris-principal">Reducción de Errores:</strong><span class="text-gris-secundario"> Datos precisos y validados.</span></div></li>
+                            <li class="flex items-start"><svg class="w-8 h-8 text-evotecnia-verde mr-4 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><div><strong class="font-semibold text-gris-principal">Toma de Decisiones Ágil:</strong><span class="text-gris-secundario"> Información clara para una mejor gestión.</span></div></li>
+                            <li class="flex items-start"><svg class="w-8 h-8 text-evotecnia-verde mr-4 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><div><strong class="font-semibold text-gris-principal">Menos Papel, Más Sostenibilidad:</strong><span class="text-gris-secundario"> Un proceso más moderno.</span></div></li>
+                        </ul>
+                    </div>
+                    <div class="mt-auto mb-8">
+                        <h3 class="font-semibold text-3xl text-gris-principal mb-8 text-center">Próximos Pasos</h3>
+                        <div class="flex flex-col md:flex-row items-center justify-center gap-8">
+                            <div class="bg-gray-100 p-6 rounded-lg shadow-sm flex flex-col items-center justify-center w-full md:w-1/3">
+                                <div class="flex-shrink-0 bg-evotecnia-verde text-white rounded-full h-16 w-16 flex items-center justify-center font-bold text-3xl mb-4">1</div>
+                                <p class="text-gris-principal font-medium text-center text-2xl">Reunión para Validar y Refinar</p>
+                            </div>
+                            <svg class="w-12 h-12 text-evotecnia-verde hidden md:block" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                            <div class="bg-gray-100 p-6 rounded-lg shadow-sm flex flex-col items-center justify-center w-full md:w-1/3">
+                                 <div class="flex-shrink-0 bg-evotecnia-verde text-white rounded-full h-16 w-16 flex items-center justify-center font-bold text-3xl mb-4">2</div>
+                                <p class="text-gris-principal font-medium text-center text-2xl">Sesión de Profundización</p>
+                            </div>
+                             <svg class="w-12 h-12 text-evotecnia-verde hidden md:block" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                            <div class="bg-gray-100 p-6 rounded-lg shadow-sm flex flex-col items-center justify-center w-full md:w-1/3">
+                                 <div class="flex-shrink-0 bg-evotecnia-verde text-white rounded-full h-16 w-16 flex items-center justify-center font-bold text-3xl mb-4">3</div>
+                                <p class="text-gris-principal font-medium text-center text-2xl">Propuesta Detallada y Plan</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Diapositiva 8: Despedida -->
+            <div id="slide-8" class="slide flex-col justify-center items-center text-center">
+                <h2 class="text-6xl md:text-7xl font-bold text-evotecnia-azul mb-12">Gracias por su tiempo</h2>
+                <div class="flex items-center justify-center space-x-12">
+                    <img src="https://www.construccionesgarcia.com.ar/wp-content/uploads/2021/07/original.png" alt="Logo de García Construcciones" class="client-logo" style="max-height: 90px;" onerror="this.onerror=null;this.src='https://placehold.co/200x60/EFEFEF/333333?text=Logo+Garc%C3%ADa+Const.';">
+                    <span class="text-5xl font-light text-gray-300">+</span>
+                    <img src="https://www.evotecnia.com.ar/assets/img/fullcolor-completo.png" alt="Logo de Evotecnia" class="evotecnia-logo-portada" style="max-height: 80px;">
+                </div>
+            </div>
+
+
+            <!-- Barra de Navegación -->
+            <div class="navigation-bar">
+                <button id="prev-btn" class="navigation-button">Anterior</button>
+                <div id="slide-number" class="slide-number"></div>
+                <button id="next-btn" class="navigation-button">Siguiente</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const slides = document.querySelectorAll('.slide');
+            const prevBtn = document.getElementById('prev-btn');
+            const nextBtn = document.getElementById('next-btn');
+            const slideCounter = document.getElementById('slide-number');
+            let currentSlide = 0;
+            const totalSlides = slides.length;
+
+            function showSlide(index) {
+                slides.forEach((slide, i) => {
+                    slide.classList.toggle('active', i === index);
+                });
+                slideCounter.textContent = `${index + 1} / ${totalSlides}`;
+                prevBtn.disabled = index === 0;
+                nextBtn.disabled = index === totalSlides - 1;
+            }
+
+            function navigateTo(slideIndex) {
+                if (slideIndex >= 0 && slideIndex < totalSlides) {
+                    currentSlide = slideIndex;
+                    showSlide(currentSlide);
+                }
+            }
+
+            nextBtn.addEventListener('click', () => navigateTo(currentSlide + 1));
+            prevBtn.addEventListener('click', () => navigateTo(currentSlide - 1));
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowRight') nextBtn.click();
+                if (e.key === 'ArrowLeft') prevBtn.click();
+            });
+            
+            const navLinks = document.querySelectorAll('[data-target-slide]');
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    const targetSlideIndex = parseInt(e.currentTarget.dataset.targetSlide, 10);
+                    if (!isNaN(targetSlideIndex)) {
+                        navigateTo(targetSlideIndex);
+                    }
+                });
+            });
+
+            showSlide(currentSlide);
+        });
+    </script>
+    <script>
+        function scalePresentation() {
+            const designWidth = 1920;
+            const designHeight = 1080;
+            const container = document.getElementById('presentation-container');
+
+            if (container) {
+                const windowWidth = window.innerWidth;
+                const windowHeight = window.innerHeight;
+
+                const scaleX = windowWidth / designWidth;
+                const scaleY = windowHeight / designHeight;
+                
+                const scale = Math.min(scaleX, scaleY);
+                
+                const scaledWidth = designWidth * scale;
+                const scaledHeight = designHeight * scale;
+
+                const left = (windowWidth - scaledWidth) / 2;
+                const top = (windowHeight - scaledHeight) / 2;
+
+                container.style.transform = `translate(${left}px, ${top}px) scale(${scale})`;
+            }
+        }
+        window.addEventListener('load', scalePresentation);
+        window.addEventListener('resize', scalePresentation);
+    </script>
+</body>
+</html>
