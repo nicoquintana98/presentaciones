@@ -11,6 +11,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     
+    <!-- Google Material Symbols -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
     <link rel="icon" href="https://www.evotecnia.com.ar/assets/img/favicon1.png" type="image/png">
 
     <style>
@@ -161,6 +164,13 @@
             font-weight: 600;
             color: white;
         }
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 48
+        }
     </style>
 </head>
 <body>
@@ -202,8 +212,12 @@
                             <div class="flex-shrink-0 bg-evotecnia-verde text-white rounded-full h-12 w-12 flex items-center justify-center font-bold text-2xl mr-6">4</div>
                             <span class="text-3xl text-gris-principal">Flujo de Gestión de Pagos</span>
                         </div>
-                         <div class="p-3 rounded-md hover:bg-gray-50 index-item flex items-center" data-target-slide="6">
+                        <div class="p-3 rounded-md hover:bg-gray-50 index-item flex items-center" data-target-slide="6">
                             <div class="flex-shrink-0 bg-evotecnia-verde text-white rounded-full h-12 w-12 flex items-center justify-center font-bold text-2xl mr-6">5</div>
+                            <span class="text-3xl text-gris-principal">Logística de Fletes</span>
+                        </div>
+                         <div class="p-3 rounded-md hover:bg-gray-50 index-item flex items-center" data-target-slide="7">
+                            <div class="flex-shrink-0 bg-evotecnia-verde text-white rounded-full h-12 w-12 flex items-center justify-center font-bold text-2xl mr-6">6</div>
                             <span class="text-3xl text-gris-principal">Beneficios Clave y Próximos Pasos</span>
                         </div>
                     </div>
@@ -214,27 +228,27 @@
             <div id="slide-3" class="slide">
                  <button class="home-button navigation-button" data-target-slide="1">Índice</button>
                 <div class="flex-grow flex flex-col justify-center">
-                    <h2 class="text-6xl font-bold text-evotecnia-azul mb-12 text-center">Puntos de dolor en la Operación Diaria</h2>
+                    <h2 class="text-6xl font-bold text-evotecnia-azul mb-16 text-center">Puntos de dolor en la Operación Diaria</h2>
                     <div class="grid md:grid-cols-2 gap-8">
                         <div class="bg-white p-6 rounded-lg shadow-md shadow-red-100 flex flex-col items-center text-center">
-                            <svg width="24px" height="24px" stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mb-4 text-red-500"><path d="M7 6L17 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M7 9L17 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M9 17H15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M3 12H2.6C2.26863 12 2 12.2686 2 12.6V21.4C2 21.7314 2.26863 22 2.6 22H21.4C21.7314 22 22 21.7314 22 21.4V12.6C22 12.2686 21.7314 12 21.4 12H21M3 12V2.6C3 2.26863 3.26863 2 3.6 2H20.4C20.7314 2 21 2.26863 21 2.6V12M3 12H21" stroke="currentColor" stroke-width="1.5"></path></svg>
+                            <span class="material-symbols-outlined text-5xl mb-4 text-red-500">receipt_long</span>
                             <h3 class="font-semibold text-xl text-gris-principal mb-2">Carga Manual de Comprobantes</h3>
                             <p class="text-lg text-gris-secundario">Tarea repetitiva y lenta que consume tiempo, con cálculos manuales de IVA y percepciones, generando errores.</p>
                         </div>
                         <div class="bg-white p-6 rounded-lg shadow-md shadow-red-100 flex flex-col items-center text-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mb-4 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                            <span class="material-symbols-outlined text-5xl mb-4 text-red-500">hourglass_empty</span>
                             <h3 class="font-semibold text-xl text-gris-principal mb-2">Control de compras / gastos manual</h3>
                             <p class="text-lg text-gris-secundario">Proceso de autorización engorroso y dependiente, que retrasa la generación de información crucial.</p>
                         </div>
                         <div class="bg-white p-6 rounded-lg shadow-md shadow-red-100 flex flex-col items-center text-center">
-                            <svg width="24px" height="24px" stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mb-4 text-red-500"><path d="M3 19V5C3 3.89543 3.89543 3 5 3H19C20.1046 3 21 3.89543 21 5V19C21 20.1046 20.1046 21 19 21H5C3.89543 21 3 20.1046 3 19Z" stroke="currentColor" stroke-width="1.5"></path><path d="M13.8562 13.8497C14.4747 13.2295 14.8571 12.3737 14.8571 11.4286C14.8571 9.53502 13.3221 8 11.4286 8C9.53502 8 8 9.53502 8 11.4286C8 13.3221 9.53502 14.8571 11.4286 14.8571C12.377 14.8571 13.2355 14.4721 13.8562 13.8497ZM13.8562 13.8497L16 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-                            <h3 class="font-semibold text-xl text-gris-principal mb-2">Difícil ver datos de venta</h3>
-                            <p class="text-lg text-gris-secundario">Sistema actual no agiliza consulta rápida de ventas del día, afectando gestión de stock y caja.</p>
+                            <span class="material-symbols-outlined text-5xl mb-4 text-red-500">query_stats</span>
+                            <h3 class="font-semibold text-xl text-gris-principal mb-2">Datos de ventas desactualizado</h3>
+                            <p class="text-lg text-gris-secundario">El sistema actual no facilita una consulta rápida de ventas del día, afectando gestión de stock y caja. Ademas la información no está en el sistema en tiempo real debido al circuito actual de fletes.</p>
                         </div>
                         <div class="bg-white p-6 rounded-lg shadow-md shadow-red-100 flex flex-col items-center text-center">
-                            <svg width="24px" height="24px" viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mb-4 text-red-500"><path d="M20 12V5.74853C20 5.5894 19.9368 5.43679 19.8243 5.32426L16.6757 2.17574C16.5632 2.06321 16.4106 2 16.2515 2H4.6C4.26863 2 4 2.26863 4 2.6V21.4C4 21.7314 4.26863 22 4.6 22H11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M8 10H16M8 6H12M8 14H11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M17.9541 16.9394L18.9541 15.9394C19.392 15.5015 20.102 15.5015 20.5399 15.9394V15.9394C20.9778 16.3773 20.9778 17.0873 20.5399 17.5252L19.5399 18.5252M17.9541 16.9394L14.963 19.9305C14.8131 20.0804 14.7147 20.2741 14.6821 20.4835L14.4394 22.0399L15.9957 21.7973C16.2052 21.7646 16.3988 21.6662 16.5487 21.5163L19.5399 18.5252M17.9541 16.9394L19.5399 18.5252" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M16 2V5.4C16 5.73137 16.2686 6 16.6 6H20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-                            <h3 class="font-semibold text-xl text-gris-principal mb-2">Remitos de Camioneros Manuales</h3>
-                            <p class="text-lg text-gris-secundario">Remitos en papel que requieren transcripción manual, redundante, lento y con mucho uso de papel.</p>
+                            <span class="material-symbols-outlined text-5xl mb-4 text-red-500">local_shipping</span>
+                            <h3 class="font-semibold text-xl text-gris-principal mb-2">Logística de Fletes Manual y Desconectada</h3>
+                            <p class="text-lg text-gris-secundario">El circuito de fletes actual, depende de remitos en papel y planillas semanales, genera controles redundantes y una falta de visibilidad en tiempo real. Esta desconexión entre la planificación, el chofer y la administración demora el ciclo de facturación y afecta la gestion.</p>
                         </div>
                     </div>
                 </div>
@@ -245,20 +259,20 @@
                  <button class="home-button navigation-button" data-target-slide="1">Índice</button>
                 <div class="flex-grow flex flex-col justify-center">
                     <h2 class="text-6xl font-bold text-evotecnia-azul mb-4 text-center">Propuesta General</h2>
-                    <p class="text-3xl text-gris-secundario font-light mb-12 text-center">Digitalización y Automatización para el Control Operativo</p>
+                    <p class="text-3xl text-gris-secundario font-light mb-16 text-center">Digitalización y Automatización para el Control Operativo</p>
                     <div class="grid md:grid-cols-3 gap-8 text-center">
                         <div class="bg-white rounded-lg p-6 flex flex-col items-center justify-center shadow-md shadow-[#00B0A8]/30 h-full">
-                            <svg width="24px" height="24px" stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mb-4 text-evotecnia-verde"><path d="M12 22V13M12 13L15.5 16.5M12 13L8.5 16.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M20 17.6073C21.4937 17.0221 23 15.6889 23 13C23 9 19.6667 8 18 8C18 6 18 2 12 2C6 2 6 6 6 8C4.33333 8 1 9 1 13C1 15.6889 2.50628 17.0221 4 17.6073" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                            <span class="material-symbols-outlined text-6xl mb-4 text-evotecnia-verde">hub</span>
                             <h3 class="font-semibold text-2xl mb-2 text-gris-principal">Centralización Inteligente</h3>
                             <p class="text-gris-secundario text-xl">Un punto único para todos los documentos y datos.</p>
                         </div>
                         <div class="bg-white rounded-lg p-6 flex flex-col items-center justify-center shadow-md shadow-[#00B0A8]/30 h-full">
-                             <svg width="24px" height="24px" viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mb-4 text-evotecnia-verde"><path d="M7 14C5.34315 14 4 15.3431 4 17C4 18.6569 5.34315 20 7 20C7.35064 20 7.68722 19.9398 8 19.8293" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M4.26392 15.6046C2.9243 14.9582 2.00004 13.587 2.00004 12C2.00004 10.7883 2.53877 9.70251 3.38978 8.96898" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M3.42053 8.8882C3.1549 8.49109 3 8.01363 3 7.5C3 6.11929 4.11929 5 5.5 5C6.06291 5 6.58237 5.18604 7.00024 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M7.23769 5.56533C7.08524 5.24215 7 4.88103 7 4.5C7 3.11929 8.11929 2 9.5 2C10.8807 2 12 3.11929 12 4.5V20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M8 20C8 21.1046 8.89543 22 10 22C11.1046 22 12 21.1046 12 20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M12 7C12 8.65685 13.3431 10 15 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M17 14C18.6569 14 20 15.3431 20 17C20 18.6569 18.6569 20 17 20C16.6494 20 16.3128 19.9398 16 19.8293" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M19.7361 15.6046C21.0757 14.9582 22 13.587 22 12C22 10.7883 21.4612 9.70251 20.6102 8.96898" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M20.5795 8.8882C20.8451 8.49109 21 8.01363 21 7.5C21 6.11929 19.8807 5 18.5 5C17.9371 5 17.4176 5.18604 16.9998 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M12 4.5C12 3.11929 13.1193 2 14.5 2C15.8807 2 17 3.11929 17 4.5C17 4.88103 16.9148 5.24215 16.7623 5.56533" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M16 20C16 21.1046 15.1046 22 14 22C12.8954 22 12 21.1046 12 20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                             <span class="material-symbols-outlined text-6xl mb-4 text-evotecnia-verde">auto_awesome</span>
                             <h3 class="font-semibold text-2xl mb-2 text-gris-principal">Automatización con IA</h3>
                             <p class="text-gris-secundario text-xl">Minimiza la carga manual, los errores y el uso de papel.</p>
                         </div>
                         <div class="bg-white rounded-lg p-6 flex flex-col items-center justify-center shadow-md shadow-[#00B0A8]/30 h-full">
-                            <svg width="24px" height="24px" stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mb-4 text-evotecnia-verde"><path d="M20 20H4V4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M4 16.5L12 9L15 12L19.5 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                            <span class="material-symbols-outlined text-6xl mb-4 text-evotecnia-verde">analytics</span>
                             <h3 class="font-semibold text-2xl mb-2 text-gris-principal">Reportes en Tiempo Real</h3>
                             <p class="text-gris-secundario text-xl">Dashboards Operativos y Gerenciales para acceso instantáneo.</p>
                         </div>
@@ -274,7 +288,7 @@
             <div id="slide-5" class="slide">
                 <button class="home-button navigation-button" data-target-slide="1">Índice</button>
                 <div class="flex-grow flex flex-col justify-center">
-                    <div class="text-center mb-12">
+                    <div class="text-center mb-16">
                         <h2 class="text-5xl font-bold text-evotecnia-azul mb-4">Flujo de carga de comprobantes</h2>
                         <p class="text-2xl text-gris-secundario font-light">Pasos para la pre-carga y validacion de comprobantes.</p>
                     </div>
@@ -290,42 +304,42 @@
                             <!-- Step 1 (top) -->
                             <div class="workflow-step w-1/6 self-start">
                                 <div class="stage-badge bg-evotecnia-verde">ETAPA 1</div>
-                                <div class="step-icon h-28 w-28 rounded-full flex items-center justify-center mb-4"><svg xmlns="http://www.w3.org/2000/svg" class="h-14 w-14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg></div>
+                                <div class="step-icon h-28 w-28 rounded-full flex items-center justify-center mb-4"><span class="material-symbols-outlined text-6xl">mail</span></div>
                                 <h3 class="font-semibold text-xl text-gris-principal">1. Envío de Comprobantes</h3>
                                 <p class="text-lg text-gris-secundario">El personal envía los comprobantes (fotos/PDF) por mail o a través de un chatbot, que opcionalmente puede solicitarle infromacion de manera guiada.</p>
                             </div>
                             <!-- Step 2 (bottom) -->
                              <div class="workflow-step w-1/6 self-end">
                                 <div class="stage-badge bg-evotecnia-verde">ETAPA 1</div>
-                                <div class="step-icon h-28 w-28 rounded-full flex items-center justify-center mb-4"><svg xmlns="http://www.w3.org/2000/svg" class="h-14 w-14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" /></svg></div>
+                                <div class="step-icon h-28 w-28 rounded-full flex items-center justify-center mb-4"><span class="material-symbols-outlined text-6xl">file_upload</span></div>
                                 <h3 class="font-semibold text-xl text-gris-principal">2. Recepción y Registro</h3>
                                 <p class="text-lg text-gris-secundario">El sistema recopila los archivos y crea un registro inicial para cada uno con la infromacion ya recopilada.</p>
                             </div>
                             <!-- Step 3 (top) -->
                             <div class="workflow-step w-1/6 self-start">
                                  <div class="stage-badge bg-evotecnia-verde">ETAPA 1</div>
-                                <div class="step-icon h-28 w-28 rounded-full flex items-center justify-center mb-4"><svg xmlns="http://www.w3.org/2000/svg" class="h-14 w-14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg></div>
+                                <div class="step-icon h-28 w-28 rounded-full flex items-center justify-center mb-4"><span class="material-symbols-outlined text-6xl">view_kanban</span></div>
                                 <h3 class="font-semibold text-xl text-gris-principal">3. Tablero de Pendientes</h3>
                                 <p class="text-lg text-gris-secundario">Cada registro aparece en un tablero visual, listo para ser procesado.</p>
                             </div>
                             <!-- Step 4 (bottom) -->
                             <div class="workflow-step w-1/6 self-end">
                                 <div class="stage-badge bg-gris-secundario">ETAPA 2</div>
-                                <div class="step-icon h-28 w-28 rounded-full flex items-center justify-center mb-4"><svg xmlns="http://www.w3.org/2000/svg" class="h-14 w-14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" /></svg></div>
+                                <div class="step-icon h-28 w-28 rounded-full flex items-center justify-center mb-4"><span class="material-symbols-outlined text-6xl">folder_managed</span></div>
                                 <h3 class="font-semibold text-xl text-gris-principal">4. Importación ARCA</h3>
                                 <p class="text-lg text-gris-secundario">En paralelo, se obtienen datos desde ARCA para el luego cruzar y validar la información.</p>
                             </div>
                             <!-- Step 5 (top) -->
                             <div class="workflow-step w-1/6 self-start">
                                 <div class="stage-badge bg-gris-secundario">ETAPA 2</div>
-                                <div class="step-icon h-28 w-28 rounded-full flex items-center justify-center mb-4"><svg xmlns="http://www.w3.org/2000/svg" class="h-14 w-14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg></div>
+                                <div class="step-icon h-28 w-28 rounded-full flex items-center justify-center mb-4"><span class="material-symbols-outlined text-6xl">document_scanner</span></div>
                                 <h3 class="font-semibold text-xl text-gris-principal">5. Procesamiento con IA</h3>
                                 <p class="text-lg text-gris-secundario">La IA lee la imagen, extrae los datos y los cruza con la información de ARCA, intentando obtener y validar info como la del proveedor, montos totales y quizas conceptos.</p>
                             </div>
                             <!-- Step 6 (bottom) -->
                             <div class="workflow-step w-1/6 self-end">
                                 <div class="stage-badge bg-gris-secundario">ETAPA 2</div>
-                                <div class="step-icon h-28 w-28 rounded-full flex items-center justify-center mb-4"><svg xmlns="http://www.w3.org/2000/svg" class="h-14 w-14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /><path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" /></svg></div>
+                                <div class="step-icon h-28 w-28 rounded-full flex items-center justify-center mb-4"><span class="material-symbols-outlined text-6xl">check_circle</span></div>
                                 <h3 class="font-semibold text-xl text-gris-principal">6. Carga Final con 1-Clic</h3>
                                 <p class="text-lg text-gris-secundario">El operador puede revisar en el tablero los datos pre-cargados y con un clic confirma y genera el comprobante lo mas automaticamente posible.</p>
                             </div>
@@ -345,9 +359,7 @@
                         <!-- Step 1 -->
                         <div class="workflow-step w-1/3">
                             <div class="stage-badge bg-gris-secundario">ETAPA 2</div>
-                            <div class="step-icon h-24 w-24 rounded-full flex items-center justify-center mb-4">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z" /></svg>
-                            </div>
+                            <div class="step-icon h-24 w-24 rounded-full flex items-center justify-center mb-4"><span class="material-symbols-outlined text-5xl">filter_list</span></div>
                             <h3 class="font-semibold text-xl text-gris-principal">1. Tablero de Autorizaciones</h3>
                             <p class="text-lg text-gris-secundario">El mismo tablero ahora permite filtrar por "Pendiente de Autorización". El responsable ve claramente qué pagos necesitan su aprobación.</p>
                         </div>
@@ -357,9 +369,7 @@
                         <!-- Step 2 -->
                         <div class="workflow-step w-1/3">
                             <div class="stage-badge bg-gris-secundario">ETAPA 2</div>
-                            <div class="step-icon h-24 w-24 rounded-full flex items-center justify-center mb-4">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                            </div>
+                            <div class="step-icon h-24 w-24 rounded-full flex items-center justify-center mb-4"><span class="material-symbols-outlined text-5xl">approval</span></div>
                             <h3 class="font-semibold text-xl text-gris-principal">2. Circuito de Aprobación</h3>
                             <p class="text-lg text-gris-secundario">El responsable recibe una notificación. Desde el tablero, puede aprobar, rechazar o consultar, dejando un registro de auditoría para cada acción.</p>
                         </div>
@@ -369,47 +379,76 @@
                         <!-- Step 3 -->
                         <div class="workflow-step w-1/3">
                             <div class="stage-badge bg-gris-secundario">ETAPA 2</div>
-                            <div class="step-icon h-24 w-24 rounded-full flex items-center justify-center mb-4">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
-                            </div>
-                            <h3 class="font-semibold text-xl text-gris-principal">3. Gestión de Pagos</h3>
-                            <p class="text-lg text-gris-secundario">Una vez autorizado, el comprobante queda listo para el circuito de pago final, con toda la trazabilidad documentada. <br><i>(Circuito a definir en conjunto)</i></p>
+                            <div class="step-icon h-24 w-24 rounded-full flex items-center justify-center mb-4"><span class="material-symbols-outlined text-5xl">payments</span></div>
+                            <h3 class="font-semibold text-xl text-gris-principal">3. Circuito de Pagos</h3>
+                            <p class="text-lg text-gris-secundario">En esta fase, relevaremos en conjunto, el flujo de pagos ideal, ajustándolo a su forma de trabajo actual. <br><i>Apuntaremos a un proceso similar al de un banco, pero mas potente, ya que como evolución, el sistema podria proyectar y sugerir fechas óptimas de pago, cruzando sus promesas de cobro con los vencimientos de egresos para optimizar el cashflow.</i></p>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <!-- Diapositiva 7: Beneficios -->
+            
+            <!-- Diapositiva 7: Logística de Fletes -->
             <div id="slide-7" class="slide">
-                 <button class="home-button navigation-button" data-target-slide="1">Índice</button>
+                <button class="home-button navigation-button" data-target-slide="1">Índice</button>
                 <div class="flex-grow flex flex-col justify-center">
-                    <h2 class="text-6xl font-bold text-evotecnia-azul mb-12 text-center">Transformación Operativa: Beneficios y Plan</h2>
-                    <div class="mb-16">
-                        <h3 class="font-semibold text-3xl text-gris-principal mb-8">Beneficios Clave</h3>
-                        <ul class="space-y-4 text-2xl">
-                            <li class="flex items-start"><svg class="w-8 h-8 text-evotecnia-verde mr-4 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><div><strong class="font-semibold text-gris-principal">Eficiencia Operativa:</strong><span class="text-gris-secundario"> Menos tareas manuales, más tiempo para el negocio.</span></div></li>
-                            <li class="flex items-start"><svg class="w-8 h-8 text-evotecnia-verde mr-4 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><div><strong class="font-semibold text-gris-principal">Control Total:</strong><span class="text-gris-secundario"> Visibilidad en tiempo real de finanzas y operaciones.</span></div></li>
-                            <li class="flex items-start"><svg class="w-8 h-8 text-evotecnia-verde mr-4 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><div><strong class="font-semibold text-gris-principal">Reducción de Errores:</strong><span class="text-gris-secundario"> Datos precisos y validados.</span></div></li>
-                            <li class="flex items-start"><svg class="w-8 h-8 text-evotecnia-verde mr-4 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><div><strong class="font-semibold text-gris-principal">Toma de Decisiones Ágil:</strong><span class="text-gris-secundario"> Información clara para una mejor gestión.</span></div></li>
-                            <li class="flex items-start"><svg class="w-8 h-8 text-evotecnia-verde mr-4 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><div><strong class="font-semibold text-gris-principal">Menos Papel, Más Sostenibilidad:</strong><span class="text-gris-secundario"> Un proceso más moderno.</span></div></li>
-                        </ul>
+                    <div class="text-center mb-12">
+                        <h2 class="text-6xl font-bold text-evotecnia-azul mb-4">Logística de Fletes</h2>
+                        <p class="text-3xl text-gris-secundario font-light">Propuesta de simplificación del circuito de fletes, autorizaciones y facturación</p>
                     </div>
-                    <div class="mt-auto mb-8">
-                        <h3 class="font-semibold text-3xl text-gris-principal mb-8 text-center">Próximos Pasos</h3>
-                        <div class="flex flex-col md:flex-row items-center justify-center gap-8">
-                            <div class="bg-gray-100 p-6 rounded-lg shadow-sm flex flex-col items-center justify-center w-full md:w-1/3">
-                                <div class="flex-shrink-0 bg-evotecnia-verde text-white rounded-full h-16 w-16 flex items-center justify-center font-bold text-3xl mb-4">1</div>
-                                <p class="text-gris-principal font-medium text-center text-2xl">Reunión para Validar y Refinar</p>
+                    
+                    <!-- Circuito Centralizado -->
+                    <div class="flex items-start justify-center w-full space-x-4 mb-10">
+                        <!-- Step 1 -->
+                        <div class="workflow-step w-1/4">
+                            <div class="stage-badge bg-evotecnia-verde">ETAPA 1</div>
+                            <div class="step-icon h-20 w-20 rounded-full flex items-center justify-center mb-4"><span class="material-symbols-outlined text-4xl">calendar_month</span></div>
+                            <h3 class="font-semibold text-xl text-gris-principal">1. Planificación de Viajes</h3>
+                            <p class="text-lg text-gris-secundario">Los viajes se cargan y planifican en una planilla centralizada dentro del sistema, asignando fletero y fecha.</p>
+                        </div>
+                        <div class="flex items-center h-20 pt-10"><svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg></div>
+                        <!-- Step 2 -->
+                        <div class="workflow-step w-1/4">
+                            <div class="stage-badge bg-evotecnia-verde">ETAPA 1</div>
+                            <div class="step-icon h-20 w-20 rounded-full flex items-center justify-center mb-4"><span class="material-symbols-outlined text-4xl">smartphone</span></div>
+                            <h3 class="font-semibold text-xl text-gris-principal">2. Acceso para Choferes</h3>
+                            <p class="text-lg text-gris-secundario">Pueden acceder a sus viajes programados a través de una interfaz simple (CRM), donde pueden interactuar y confirmar la información.</p>
+                        </div>
+                        <div class="flex items-center h-20 pt-10"><svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg></div>
+                        <!-- Step 3 -->
+                        <div class="workflow-step w-1/4">
+                            <div class="stage-badge bg-evotecnia-verde">ETAPA 1</div>
+                            <div class="step-icon h-20 w-20 rounded-full flex items-center justify-center mb-4"><span class="material-symbols-outlined text-4xl">transform</span></div>
+                            <h3 class="font-semibold text-xl text-gris-principal">3. Transformación a Remito</h3>
+                            <p class="text-lg text-gris-secundario">Una vez que el viaje es confirmado (y el remito en papel es subido como imagen), podemos transformar esa información en un remito del sistema con un solo clic, teniendo la imagen original para consulta.</p>
+                        </div>
+                        <div class="flex items-center h-20 pt-10"><svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg></div>
+                        <!-- Step 4 -->
+                        <div class="workflow-step w-1/4">
+                            <div class="stage-badge bg-evotecnia-verde">ETAPA 1</div>
+                            <div class="step-icon h-20 w-20 rounded-full flex items-center justify-center mb-4"><span class="material-symbols-outlined text-4xl">request_quote</span></div>
+                            <h3 class="font-semibold text-xl text-gris-principal">4. Facturación</h3>
+                            <p class="text-lg text-gris-secundario">La facturación continua realizándose de la forma actual, pero partiendo de datos ya validados y digitalizados  para mayor agilidad y precisión.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Evoluciones Futuras -->
+                    <div class="border-t-2 border-gray-200 pt-6">
+                        <h3 class="text-3xl font-bold text-evotecnia-azul text-center mb-6">Evoluciones Futuras (El Siguiente Nivel)</h3>
+                        <div class="grid grid-cols-3 gap-8 text-center">
+                            <div class="bg-gray-50 p-6 rounded-lg">
+                                <span class="material-symbols-outlined text-5xl mb-4 text-evotecnia-verde">signature</span>
+                                <h4 class="font-semibold text-xl text-gris-principal">Remitos 100% Digitales</h4>
+                                <p class="text-lg text-gris-secundario">Podemos evolucionar hacia remitos digitales que se firman en el celular del cliente y se envían automáticamente por mail (al estilo de ML, DHL, Andreani).</p>
                             </div>
-                            <svg class="w-12 h-12 text-evotecnia-verde hidden md:block" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-                            <div class="bg-gray-100 p-6 rounded-lg shadow-sm flex flex-col items-center justify-center w-full md:w-1/3">
-                                 <div class="flex-shrink-0 bg-evotecnia-verde text-white rounded-full h-16 w-16 flex items-center justify-center font-bold text-3xl mb-4">2</div>
-                                <p class="text-gris-principal font-medium text-center text-2xl">Sesión de Profundización</p>
+                            <div class="bg-gray-50 p-6 rounded-lg">
+                                <span class="material-symbols-outlined text-5xl mb-4 text-evotecnia-verde">location_on</span>
+                                <h4 class="font-semibold text-xl text-gris-principal">Seguimiento por Geolocalización</h4>
+                                <p class="text-lg text-gris-secundario">Podríamos dar seguimiento de los viajes en tiempo real, permitiendo tener la ubicación exacta de cada flete para una mejor coordinación y servicio.</p>
                             </div>
-                             <svg class="w-12 h-12 text-evotecnia-verde hidden md:block" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-                            <div class="bg-gray-100 p-6 rounded-lg shadow-sm flex flex-col items-center justify-center w-full md:w-1/3">
-                                 <div class="flex-shrink-0 bg-evotecnia-verde text-white rounded-full h-16 w-16 flex items-center justify-center font-bold text-3xl mb-4">3</div>
-                                <p class="text-gris-principal font-medium text-center text-2xl">Propuesta Detallada y Plan</p>
+                            <div class="bg-gray-50 p-6 rounded-lg">
+                                <span class="material-symbols-outlined text-5xl mb-4 text-evotecnia-verde">rocket_launch</span>
+                                <h4 class="font-semibold text-xl text-gris-principal">App para Tercerizados</h4>
+                                <p class="text-lg text-gris-secundario">Para optimizar la logística con terceros, podemos desarrollar una aplicación de solicitud y confirmación de viajes (similar a Uber o a nuestra app de grúas), agilizando la contratación y asignación.</p>
                             </div>
                         </div>
                     </div>
@@ -511,4 +550,3 @@
     </script>
 </body>
 </html>
-
