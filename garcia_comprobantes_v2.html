@@ -202,7 +202,7 @@
                         </div>
                         <div class="p-3 rounded-md hover:bg-gray-50 index-item flex items-center" data-target-slide="3">
                             <div class="flex-shrink-0 bg-evotecnia-verde text-white rounded-full h-12 w-12 flex items-center justify-center font-bold text-2xl mr-6">2</div>
-                            <span class="text-3xl text-gris-principal">Propuesta General: <span class="font-light text-gris-secundario">Digitalización y Automatización</span></span>
+                            <span class="text-3xl text-gris-principal">Propuesta General</span>
                         </div>
                         <div class="p-3 rounded-md hover:bg-gray-50 index-item flex items-center" data-target-slide="4">
                             <div class="flex-shrink-0 bg-evotecnia-verde text-white rounded-full h-12 w-12 flex items-center justify-center font-bold text-2xl mr-6">3</div>
@@ -215,10 +215,6 @@
                         <div class="p-3 rounded-md hover:bg-gray-50 index-item flex items-center" data-target-slide="6">
                             <div class="flex-shrink-0 bg-evotecnia-verde text-white rounded-full h-12 w-12 flex items-center justify-center font-bold text-2xl mr-6">5</div>
                             <span class="text-3xl text-gris-principal">Logística de Fletes</span>
-                        </div>
-                         <div class="p-3 rounded-md hover:bg-gray-50 index-item flex items-center" data-target-slide="7">
-                            <div class="flex-shrink-0 bg-evotecnia-verde text-white rounded-full h-12 w-12 flex items-center justify-center font-bold text-2xl mr-6">6</div>
-                            <span class="text-3xl text-gris-principal">Beneficios Clave y Próximos Pasos</span>
                         </div>
                     </div>
                 </div>
@@ -236,12 +232,12 @@
                             <p class="text-lg text-gris-secundario">Tarea repetitiva y lenta que consume tiempo, con cálculos manuales de IVA y percepciones, generando errores.</p>
                         </div>
                         <div class="bg-white p-6 rounded-lg shadow-md shadow-red-100 flex flex-col items-center text-center">
-                            <span class="material-symbols-outlined text-5xl mb-4 text-red-500">hourglass_empty</span>
+                            <span class="material-symbols-outlined text-5xl mb-4 text-red-500">pending_actions</span>
                             <h3 class="font-semibold text-xl text-gris-principal mb-2">Control de compras / gastos manual</h3>
                             <p class="text-lg text-gris-secundario">Proceso de autorización engorroso y dependiente, que retrasa la generación de información crucial.</p>
                         </div>
                         <div class="bg-white p-6 rounded-lg shadow-md shadow-red-100 flex flex-col items-center text-center">
-                            <span class="material-symbols-outlined text-5xl mb-4 text-red-500">query_stats</span>
+                            <span class="material-symbols-outlined text-5xl mb-4 text-red-500">analytics</span>
                             <h3 class="font-semibold text-xl text-gris-principal mb-2">Datos de ventas desactualizado</h3>
                             <p class="text-lg text-gris-secundario">El sistema actual no facilita una consulta rápida de ventas del día, afectando gestión de stock y caja. Ademas la información no está en el sistema en tiempo real debido al circuito actual de fletes.</p>
                         </div>
@@ -304,14 +300,14 @@
                             <!-- Step 1 (top) -->
                             <div class="workflow-step w-1/6 self-start">
                                 <div class="stage-badge bg-evotecnia-verde">ETAPA 1</div>
-                                <div class="step-icon h-28 w-28 rounded-full flex items-center justify-center mb-4"><span class="material-symbols-outlined text-6xl">mail</span></div>
+                                <div class="step-icon h-28 w-28 rounded-full flex items-center justify-center mb-4"><span class="material-symbols-outlined text-6xl">send</span></div>
                                 <h3 class="font-semibold text-xl text-gris-principal">1. Envío de Comprobantes</h3>
                                 <p class="text-lg text-gris-secundario">El personal envía los comprobantes (fotos/PDF) por mail o a través de un chatbot, que opcionalmente puede solicitarle infromacion de manera guiada.</p>
                             </div>
                             <!-- Step 2 (bottom) -->
                              <div class="workflow-step w-1/6 self-end">
                                 <div class="stage-badge bg-evotecnia-verde">ETAPA 1</div>
-                                <div class="step-icon h-28 w-28 rounded-full flex items-center justify-center mb-4"><span class="material-symbols-outlined text-6xl">file_upload</span></div>
+                                <div class="step-icon h-28 w-28 rounded-full flex items-center justify-center mb-4"><span class="material-symbols-outlined text-6xl">database_upload</span></div>
                                 <h3 class="font-semibold text-xl text-gris-principal">2. Recepción y Registro</h3>
                                 <p class="text-lg text-gris-secundario">El sistema recopila los archivos y crea un registro inicial para cada uno con la infromacion ya recopilada.</p>
                             </div>
@@ -325,7 +321,7 @@
                             <!-- Step 4 (bottom) -->
                             <div class="workflow-step w-1/6 self-end">
                                 <div class="stage-badge bg-gris-secundario">ETAPA 2</div>
-                                <div class="step-icon h-28 w-28 rounded-full flex items-center justify-center mb-4"><span class="material-symbols-outlined text-6xl">folder_managed</span></div>
+                                <div class="step-icon h-28 w-28 rounded-full flex items-center justify-center mb-4"><span class="material-symbols-outlined text-6xl">file_save</span></div>
                                 <h3 class="font-semibold text-xl text-gris-principal">4. Importación ARCA</h3>
                                 <p class="text-lg text-gris-secundario">En paralelo, se obtienen datos desde ARCA para el luego cruzar y validar la información.</p>
                             </div>
@@ -339,7 +335,7 @@
                             <!-- Step 6 (bottom) -->
                             <div class="workflow-step w-1/6 self-end">
                                 <div class="stage-badge bg-gris-secundario">ETAPA 2</div>
-                                <div class="step-icon h-28 w-28 rounded-full flex items-center justify-center mb-4"><span class="material-symbols-outlined text-6xl">check_circle</span></div>
+                                <div class="step-icon h-28 w-28 rounded-full flex items-center justify-center mb-4"><span class="material-symbols-outlined text-6xl">fact_check</span></div>
                                 <h3 class="font-semibold text-xl text-gris-principal">6. Carga Final con 1-Clic</h3>
                                 <p class="text-lg text-gris-secundario">El operador puede revisar en el tablero los datos pre-cargados y con un clic confirma y genera el comprobante lo mas automaticamente posible.</p>
                             </div>
@@ -359,7 +355,7 @@
                         <!-- Step 1 -->
                         <div class="workflow-step w-1/3">
                             <div class="stage-badge bg-gris-secundario">ETAPA 2</div>
-                            <div class="step-icon h-24 w-24 rounded-full flex items-center justify-center mb-4"><span class="material-symbols-outlined text-5xl">filter_list</span></div>
+                            <div class="step-icon h-24 w-24 rounded-full flex items-center justify-center mb-4"><span class="material-symbols-outlined text-5xl">list_alt_check</span></div>
                             <h3 class="font-semibold text-xl text-gris-principal">1. Tablero de Autorizaciones</h3>
                             <p class="text-lg text-gris-secundario">El mismo tablero ahora permite filtrar por "Pendiente de Autorización". El responsable ve claramente qué pagos necesitan su aprobación.</p>
                         </div>
@@ -369,7 +365,7 @@
                         <!-- Step 2 -->
                         <div class="workflow-step w-1/3">
                             <div class="stage-badge bg-gris-secundario">ETAPA 2</div>
-                            <div class="step-icon h-24 w-24 rounded-full flex items-center justify-center mb-4"><span class="material-symbols-outlined text-5xl">approval</span></div>
+                            <div class="step-icon h-24 w-24 rounded-full flex items-center justify-center mb-4"><span class="material-symbols-outlined text-5xl">verified</span></div>
                             <h3 class="font-semibold text-xl text-gris-principal">2. Circuito de Aprobación</h3>
                             <p class="text-lg text-gris-secundario">El responsable recibe una notificación. Desde el tablero, puede aprobar, rechazar o consultar, dejando un registro de auditoría para cada acción.</p>
                         </div>
@@ -379,7 +375,7 @@
                         <!-- Step 3 -->
                         <div class="workflow-step w-1/3">
                             <div class="stage-badge bg-gris-secundario">ETAPA 2</div>
-                            <div class="step-icon h-24 w-24 rounded-full flex items-center justify-center mb-4"><span class="material-symbols-outlined text-5xl">payments</span></div>
+                            <div class="step-icon h-24 w-24 rounded-full flex items-center justify-center mb-4"><span class="material-symbols-outlined text-5xl">payment_arrow_down</span></div>
                             <h3 class="font-semibold text-xl text-gris-principal">3. Circuito de Pagos</h3>
                             <p class="text-lg text-gris-secundario">En esta fase, relevaremos en conjunto, el flujo de pagos ideal, ajustándolo a su forma de trabajo actual. <br><i>Apuntaremos a un proceso similar al de un banco, pero mas potente, ya que como evolución, el sistema podria proyectar y sugerir fechas óptimas de pago, cruzando sus promesas de cobro con los vencimientos de egresos para optimizar el cashflow.</i></p>
                         </div>
@@ -409,7 +405,7 @@
                         <!-- Step 2 -->
                         <div class="workflow-step w-1/4">
                             <div class="stage-badge bg-evotecnia-verde">ETAPA 1</div>
-                            <div class="step-icon h-20 w-20 rounded-full flex items-center justify-center mb-4"><span class="material-symbols-outlined text-4xl">smartphone</span></div>
+                            <div class="step-icon h-20 w-20 rounded-full flex items-center justify-center mb-4"><span class="material-symbols-outlined text-4xl">mobile_chat</span></div>
                             <h3 class="font-semibold text-xl text-gris-principal">2. Acceso para Choferes</h3>
                             <p class="text-lg text-gris-secundario">Pueden acceder a sus viajes programados a través de una interfaz simple (CRM), donde pueden interactuar y confirmar la información.</p>
                         </div>
@@ -417,7 +413,7 @@
                         <!-- Step 3 -->
                         <div class="workflow-step w-1/4">
                             <div class="stage-badge bg-evotecnia-verde">ETAPA 1</div>
-                            <div class="step-icon h-20 w-20 rounded-full flex items-center justify-center mb-4"><span class="material-symbols-outlined text-4xl">transform</span></div>
+                            <div class="step-icon h-20 w-20 rounded-full flex items-center justify-center mb-4"><span class="material-symbols-outlined text-4xl">stacked_inbox</span></div>
                             <h3 class="font-semibold text-xl text-gris-principal">3. Transformación a Remito</h3>
                             <p class="text-lg text-gris-secundario">Una vez que el viaje es confirmado (y el remito en papel es subido como imagen), podemos transformar esa información en un remito del sistema con un solo clic, teniendo la imagen original para consulta.</p>
                         </div>
@@ -433,7 +429,7 @@
                     
                     <!-- Evoluciones Futuras -->
                     <div class="border-t-2 border-gray-200 pt-6">
-                        <h3 class="text-3xl font-bold text-evotecnia-azul text-center mb-6">Evoluciones Futuras (El Siguiente Nivel)</h3>
+                        <h3 class="text-3xl font-bold text-evotecnia-azul text-center mb-6">Evoluciones Futuras</h3>
                         <div class="grid grid-cols-3 gap-8 text-center">
                             <div class="bg-gray-50 p-6 rounded-lg">
                                 <span class="material-symbols-outlined text-5xl mb-4 text-evotecnia-verde">signature</span>
@@ -446,7 +442,7 @@
                                 <p class="text-lg text-gris-secundario">Podríamos dar seguimiento de los viajes en tiempo real, permitiendo tener la ubicación exacta de cada flete para una mejor coordinación y servicio.</p>
                             </div>
                             <div class="bg-gray-50 p-6 rounded-lg">
-                                <span class="material-symbols-outlined text-5xl mb-4 text-evotecnia-verde">rocket_launch</span>
+                                <span class="material-symbols-outlined text-5xl mb-4 text-evotecnia-verde">mobile_hand</span>
                                 <h4 class="font-semibold text-xl text-gris-principal">App para Tercerizados</h4>
                                 <p class="text-lg text-gris-secundario">Para optimizar la logística con terceros, podemos desarrollar una aplicación de solicitud y confirmación de viajes (similar a Uber o a nuestra app de grúas), agilizando la contratación y asignación.</p>
                             </div>
