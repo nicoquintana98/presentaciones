@@ -11,7 +11,7 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f0f9f3; /* Un verde muy claro para el fondo */
+            background-color: #ffffff; /* Fondo blanco por defecto */
         }
         @media print {
             body {
@@ -19,29 +19,19 @@
                 print-color-adjust: exact;
                 background-color: #ffffff;
             }
-            .a4-sheet {
+            .content-container {
+                padding: 0;
                 margin: 0;
                 box-shadow: none;
                 border: none;
+                max-width: 100%;
             }
         }
-        .a4-sheet {
-            width: 21cm;
-            min-height: 29.7cm;
-            padding: 1.5cm;
-            margin: 2rem auto;
-            background: white;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            display: flex;
-            flex-direction: column;
-        }
-        .input-cell {
-            height: 38px; /* Altura fija para las celdas de entrada */
-        }
-        .header-cell {
-            background-color: #ecfdf5; /* Verde muy pálido para cabeceras */
-            color: #065f46; /* Verde oscuro para texto de cabecera */
-            font-weight: 600;
+        .content-container {
+            /* Estilos para una lectura cómoda en pantalla */
+            max-width: 21cm; /* Ancho máximo para legibilidad */
+            margin: 0 auto; /* Centrar el contenido */
+            padding: 2rem; /* Espaciado para la vista en pantalla */
         }
         table {
             width: 100%;
@@ -49,192 +39,189 @@
             table-layout: fixed;
         }
         th, td {
-            padding: 8px 10px;
-            text-align: left;
+            border: 1px solid #a7f3d0; /* Verde claro */
+            padding: 8px;
+            text-align: center;
             font-size: 11px;
-            vertical-align: middle;
-            word-wrap: break-word;
-            border: 1px solid #a7f3d0; /* Borde verde unificado */
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
         }
-        .task-name {
+        th {
+            background-color: #d1fae5; /* Verde muy claro */
+            font-weight: 600;
+            color: #065f46; /* Verde oscuro */
+        }
+        td {
+            color: #374151;
+        }
+        .task-name-col {
+            width: 40%; /* Aumentado para dar más espacio al nombre de la tarea */
+            text-align: left;
             font-weight: 500;
-            color: #111827;
+            white-space: normal;
         }
         .section-title {
-            font-size: 1.25rem; /* 20px */
+            font-size: 1.25rem;
             font-weight: 700;
             color: #047857; /* Verde principal */
             margin-bottom: 1rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid #a7f3d0;
+        }
+        .thick-right-border {
+            border-right: 3px solid #047857;
+        }
+        .thick-left-border {
+             border-left: 3px solid #047857;
+        }
+        .filled-cell {
+            background-color: #f3f4f6; /* Gris claro */
         }
     </style>
 </head>
-<body class="bg-gray-100 flex flex-col items-center justify-center p-4">
-    
-    <!-- Contenedor con formato A4 -->
-    <div class="a4-sheet">
+<body>
+
+    <div class="content-container">
         <header class="text-center mb-8">
             <h1 class="text-3xl font-bold text-green-800 tracking-wider">PLANIFICADOR SEMANAL</h1>
-            <p class="text-gray-500 mt-1">Semana del: ............................................ al ............................................</p>
+            <p class="text-md text-gray-500 mt-2">Seguimiento de Tareas Diarias y Semanales</p>
         </header>
 
-        <main class="flex-grow">
-            <!-- Sección de Tareas Diarias -->
+        <main>
+            <!-- Tareas Diarias -->
             <section class="mb-8">
-                <h2 class="section-title">🔄 TAREAS DIARIAS</h2>
+                <h2 class="section-title">🔄 Tareas Diarias</h2>
                 <table>
                     <thead>
                         <tr>
-                            <th class="header-cell" style="width: 52%;">Tarea</th>
-                            <th class="header-cell text-center">Lun</th>
-                            <th class="header-cell text-center">Mar</th>
-                            <th class="header-cell text-center">Mié</th>
-                            <th class="header-cell text-center">Jue</th>
-                            <th class="header-cell text-center">Vie</th>
-                            <th class="header-cell text-center">Sáb</th>
+                            <th class="task-name-col">Tarea</th>
+                            <th>Lun</th>
+                            <th>Mar</th>
+                            <th>Mié</th>
+                            <th>Jue</th>
+                            <th>Vie</th>
+                            <th class="thick-right-border">Sáb</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="task-name">Revisar canasto de regresados del técnico</td>
-                            <td class="input-cell"></td><td class="input-cell"></td><td class="input-cell"></td>
-                            <td class="input-cell"></td><td class="input-cell"></td><td class="input-cell"></td>
+                            <td class="task-name-col">Revisar canasto de regresados del técnico</td>
+                            <td></td><td></td><td></td><td></td><td></td><td class="thick-right-border"></td>
                         </tr>
                         <tr>
-                            <td class="task-name">Revisar canastos de equipos recibidos</td>
-                            <td class="input-cell"></td><td class="input-cell"></td><td class="input-cell"></td>
-                            <td class="input-cell"></td><td class="input-cell"></td><td class="input-cell"></td>
+                            <td class="task-name-col">Revisar canastos de equipos recibidos</td>
+                            <td></td><td></td><td></td><td></td><td></td><td class="thick-right-border"></td>
+                        </tr>
+                        <tr>
+                            <td class="task-name-col">Revisión de embudo de garantías</td>
+                            <td></td><td></td><td></td><td></td><td></td><td class="thick-right-border"></td>
+                        </tr>
+                        <tr>
+                            <td class="task-name-col"></td><td></td><td></td><td></td><td></td><td></td><td class="thick-right-border"></td>
+                        </tr>
+                        <tr>
+                            <td class="task-name-col"></td><td></td><td></td><td></td><td></td><td></td><td class="thick-right-border"></td>
                         </tr>
                          <tr>
-                            <td class="task-name">Revisión de embudo de garantías</td>
-                            <td class="input-cell"></td><td class="input-cell"></td><td class="input-cell"></td>
-                            <td class="input-cell"></td><td class="input-cell"></td><td class="input-cell"></td>
+                            <td class="task-name-col"></td><td></td><td></td><td></td><td></td><td></td><td class="thick-right-border"></td>
                         </tr>
-                         <!-- Filas vacías -->
-                        <tr><td class="task-name h-[38px]"></td><td class="input-cell"></td><td class="input-cell"></td><td class="input-cell"></td><td class="input-cell"></td><td class="input-cell"></td><td class="input-cell"></td></tr>
-                        <tr><td class="task-name h-[38px]"></td><td class="input-cell"></td><td class="input-cell"></td><td class="input-cell"></td><td class="input-cell"></td><td class="input-cell"></td><td class="input-cell"></td></tr>
-                        <tr><td class="task-name h-[38px]"></td><td class="input-cell"></td><td class="input-cell"></td><td class="input-cell"></td><td class="input-cell"></td><td class="input-cell"></td><td class="input-cell"></td></tr>
                     </tbody>
                 </table>
             </section>
 
-            <!-- Sección de Tareas Semanales -->
-            <section>
-                <h2 class="section-title">📅 TAREAS SEMANALES</h2>
+            <!-- Tareas Semanales -->
+            <section class="mb-8">
+                <h2 class="section-title">📅 Tareas Semanales</h2>
                 <table>
                     <thead>
                         <tr>
-                            <th class="header-cell border-r-4 border-green-300" style="width: 40%;">Tarea</th>
-                            <th class="header-cell text-center" style="width: 10%;">Día</th>
-                            <th class="header-cell text-center border-r-4 border-green-300" style="width: 10%;">Quien</th>
-                            <th class="header-cell text-center" style="width: 10%;">Día</th>
-                            <th class="header-cell text-center border-r-4 border-green-300" style="width: 10%;">Quien</th>
-                            <th class="header-cell text-center" style="width: 10%;">Día</th>
-                            <th class="header-cell text-center" style="width: 10%;">Quien</th>
+                            <th class="task-name-col thick-right-border">Tarea</th>
+                            <th colspan="2" class="thick-right-border">1ª Vez</th>
+                            <th colspan="2" class="thick-right-border">2ª Vez</th>
+                            <th colspan="2" class="thick-right-border">3ª Vez</th>
+                        </tr>
+                        <tr>
+                            <th class="task-name-col thick-right-border"></th>
+                            <th>Día</th><th class="thick-right-border">Quien</th>
+                            <th>Día</th><th class="thick-right-border">Quien</th>
+                            <th>Día</th><th class="thick-right-border">Quien</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <!-- Tareas -->
-                        <tr>
-                            <td class="task-name border-r-4 border-green-300">Comenzar proceso de ingreso de equipos - (3)</td>
-                            <td class="input-cell"></td><td class="input-cell border-r-4 border-green-300"></td>
-                            <td class="input-cell"></td><td class="input-cell border-r-4 border-green-300"></td>
-                            <td class="input-cell"></td><td class="input-cell"></td>
+                         <tr>
+                            <td class="task-name-col thick-right-border">Comenzar proceso de ingreso de equipos - (3)</td>
+                            <td></td><td class="thick-right-border"></td><td></td><td class="thick-right-border"></td><td></td><td class="thick-right-border"></td>
                         </tr>
                         <tr>
-                            <td class="task-name border-r-4 border-green-300">Vaciar tachos de café - (3)</td>
-                            <td class="input-cell"></td><td class="input-cell border-r-4 border-green-300"></td>
-                            <td class="input-cell"></td><td class="input-cell border-r-4 border-green-300"></td>
-                            <td class="input-cell"></td><td class="input-cell"></td>
+                            <td class="task-name-col thick-right-border">Reordenar canastos de testeo - (2)</td>
+                            <td></td><td class="thick-right-border"></td><td></td><td class="thick-right-border"></td><td class="filled-cell"></td><td class="filled-cell thick-right-border"></td>
                         </tr>
                         <tr>
-                            <td class="task-name border-r-4 border-green-300">Reordenar canastos de testeo - (2)</td>
-                            <td class="input-cell"></td><td class="input-cell border-r-4 border-green-300"></td>
-                            <td class="input-cell"></td><td class="input-cell border-r-4 border-green-300"></td>
-                            <td class="input-cell bg-gray-100"></td><td class="input-cell bg-gray-100"></td>
+                           <td class="task-name-col thick-right-border">Ordenar zona de atención a fondo - (2)</td>
+                            <td></td><td class="thick-right-border"></td><td></td><td class="thick-right-border"></td><td class="filled-cell"></td><td class="filled-cell thick-right-border"></td>
                         </tr>
                         <tr>
-                            <td class="task-name border-r-4 border-green-300">Ordenar zona de atención a fondo - (2)</td>
-                            <td class="input-cell"></td><td class="input-cell border-r-4 border-green-300"></td>
-                            <td class="input-cell"></td><td class="input-cell border-r-4 border-green-300"></td>
-                            <td class="input-cell bg-gray-100"></td><td class="input-cell bg-gray-100"></td>
+                            <td class="task-name-col thick-right-border">Limpieza zona interior - (1)</td>
+                            <td></td><td class="thick-right-border"></td><td class="filled-cell"></td><td class="filled-cell thick-right-border"></td><td class="filled-cell"></td><td class="filled-cell thick-right-border"></td>
                         </tr>
                         <tr>
-                            <td class="task-name border-r-4 border-green-300">Reponer accesorios - (2)</td>
-                            <td class="input-cell"></td><td class="input-cell border-r-4 border-green-300"></td>
-                            <td class="input-cell"></td><td class="input-cell border-r-4 border-green-300"></td>
-                            <td class="input-cell bg-gray-100"></td><td class="input-cell bg-gray-100"></td>
+                            <td class="task-name-col thick-right-border">Vaciar tachos de café - (3)</td>
+                            <td></td><td class="thick-right-border"></td><td></td><td class="thick-right-border"></td><td></td><td class="thick-right-border"></td>
                         </tr>
                         <tr>
-                            <td class="task-name border-r-4 border-green-300">Limpieza zona interior - (1)</td>
-                            <td class="input-cell"></td><td class="input-cell border-r-4 border-green-300"></td>
-                            <td class="input-cell bg-gray-100"></td><td class="input-cell bg-gray-100 border-r-4 border-green-300"></td>
-                            <td class="input-cell bg-gray-100"></td><td class="input-cell bg-gray-100"></td>
+                           <td class="task-name-col thick-right-border">Vaciar tacho ECO - (1)</td>
+                            <td></td><td class="thick-right-border"></td><td class="filled-cell"></td><td class="filled-cell thick-right-border"></td><td class="filled-cell"></td><td class="filled-cell thick-right-border"></td>
                         </tr>
                         <tr>
-                            <td class="task-name border-r-4 border-green-300">Vaciar tacho ECO - (1)</td>
-                            <td class="input-cell"></td><td class="input-cell border-r-4 border-green-300"></td>
-                            <td class="input-cell bg-gray-100"></td><td class="input-cell bg-gray-100 border-r-4 border-green-300"></td>
-                            <td class="input-cell bg-gray-100"></td><td class="input-cell bg-gray-100"></td>
+                            <td class="task-name-col thick-right-border">Lavar balde de restos de café - (1)</td>
+                            <td></td><td class="thick-right-border"></td><td class="filled-cell"></td><td class="filled-cell thick-right-border"></td><td class="filled-cell"></td><td class="filled-cell thick-right-border"></td>
                         </tr>
                         <tr>
-                            <td class="task-name border-r-4 border-green-300">Lavar balde de restos de café - (1)</td>
-                            <td class="input-cell"></td><td class="input-cell border-r-4 border-green-300"></td>
-                            <td class="input-cell bg-gray-100"></td><td class="input-cell bg-gray-100 border-r-4 border-green-300"></td>
-                            <td class="input-cell bg-gray-100"></td><td class="input-cell bg-gray-100"></td>
+                           <td class="task-name-col thick-right-border">Reponer accesorios - (2)</td>
+                            <td></td><td class="thick-right-border"></td><td></td><td class="thick-right-border"></td><td class="filled-cell"></td><td class="filled-cell thick-right-border"></td>
+                        </tr>
+                         <tr>
+                            <td class="task-name-col thick-right-border">Stock de accesorios - (1)</td>
+                            <td></td><td class="thick-right-border"></td><td class="filled-cell"></td><td class="filled-cell thick-right-border"></td><td class="filled-cell"></td><td class="filled-cell thick-right-border"></td>
                         </tr>
                         <tr>
-                            <td class="task-name border-r-4 border-green-300">Stock de accesorios - (1)</td>
-                            <td class="input-cell"></td><td class="input-cell border-r-4 border-green-300"></td>
-                            <td class="input-cell bg-gray-100"></td><td class="input-cell bg-gray-100 border-r-4 border-green-300"></td>
-                            <td class="input-cell bg-gray-100"></td><td class="input-cell bg-gray-100"></td>
+                           <td class="task-name-col thick-right-border">Stock rápido de teléfonos - (1)</td>
+                            <td></td><td class="thick-right-border"></td><td class="filled-cell"></td><td class="filled-cell thick-right-border"></td><td class="filled-cell"></td><td class="filled-cell thick-right-border"></td>
                         </tr>
                         <tr>
-                            <td class="task-name border-r-4 border-green-300">Stock rápido de teléfonos - (1)</td>
-                            <td class="input-cell"></td><td class="input-cell border-r-4 border-green-300"></td>
-                            <td class="input-cell bg-gray-100"></td><td class="input-cell bg-gray-100 border-r-4 border-green-300"></td>
-                            <td class="input-cell bg-gray-100"></td><td class="input-cell bg-gray-100"></td>
+                            <td class="task-name-col thick-right-border">Máquina de café + insumos - (1)</td>
+                            <td></td><td class="thick-right-border"></td><td class="filled-cell"></td><td class="filled-cell thick-right-border"></td><td class="filled-cell"></td><td class="filled-cell thick-right-border"></td>
                         </tr>
                         <tr>
-                            <td class="task-name border-r-4 border-green-300">Máquina de café + insumos - (1)</td>
-                            <td class="input-cell"></td><td class="input-cell border-r-4 border-green-300"></td>
-                            <td class="input-cell bg-gray-100"></td><td class="input-cell bg-gray-100 border-r-4 border-green-300"></td>
-                            <td class="input-cell bg-gray-100"></td><td class="input-cell bg-gray-100"></td>
+                            <td class="task-name-col thick-right-border">Revisión de viejitos - (1)</td>
+                            <td></td><td class="thick-right-border"></td><td class="filled-cell"></td><td class="filled-cell thick-right-border"></td><td class="filled-cell"></td><td class="filled-cell thick-right-border"></td>
                         </tr>
                         <tr>
-                            <td class="task-name border-r-4 border-green-300">Revisión de viejitos - (1)</td>
-                            <td class="input-cell"></td><td class="input-cell border-r-4 border-green-300"></td>
-                            <td class="input-cell bg-gray-100"></td><td class="input-cell bg-gray-100 border-r-4 border-green-300"></td>
-                            <td class="input-cell bg-gray-100"></td><td class="input-cell bg-gray-100"></td>
+                            <td class="task-name-col thick-right-border">Post-procesado de viejitos - (1)</td>
+                            <td></td><td class="thick-right-border"></td><td class="filled-cell"></td><td class="filled-cell thick-right-border"></td><td class="filled-cell"></td><td class="filled-cell thick-right-border"></td>
                         </tr>
                         <tr>
-                            <td class="task-name border-r-4 border-green-300">Post-procesado de viejitos - (1)</td>
-                            <td class="input-cell"></td><td class="input-cell border-r-4 border-green-300"></td>
-                            <td class="input-cell bg-gray-100"></td><td class="input-cell bg-gray-100 border-r-4 border-green-300"></td>
-                            <td class="input-cell bg-gray-100"></td><td class="input-cell bg-gray-100"></td>
+                            <td class="task-name-col thick-right-border">Revisión de cuentas de clientes - (1)</td>
+                            <td></td><td class="thick-right-border"></td><td class="filled-cell"></td><td class="filled-cell thick-right-border"></td><td class="filled-cell"></td><td class="filled-cell thick-right-border"></td>
+                        </tr>
+                         <tr>
+                            <td class="task-name-col thick-right-border"></td><td></td><td class="thick-right-border"></td><td></td><td class="thick-right-border"></td><td></td><td class="thick-right-border"></td>
                         </tr>
                         <tr>
-                            <td class="task-name border-r-4 border-green-300">Revisión de cuentas de clientes - (1)</td>
-                            <td class="input-cell"></td><td class="input-cell border-r-4 border-green-300"></td>
-                            <td class="input-cell bg-gray-100"></td><td class="input-cell bg-gray-100 border-r-4 border-green-300"></td>
-                            <td class="input-cell bg-gray-100"></td><td class="input-cell bg-gray-100"></td>
+                           <td class="task-name-col thick-right-border"></td><td></td><td class="thick-right-border"></td><td></td><td class="thick-right-border"></td><td></td><td class="thick-right-border"></td>
                         </tr>
-                        <!-- Filas vacías -->
-                        <tr><td class="task-name h-[38px] border-r-4 border-green-300"></td><td class="input-cell"></td><td class="input-cell border-r-4 border-green-300"></td><td class="input-cell"></td><td class="input-cell border-r-4 border-green-300"></td><td class="input-cell"></td><td class="input-cell"></td></tr>
-                        <tr><td class="task-name h-[38px] border-r-4 border-green-300"></td><td class="input-cell"></td><td class="input-cell border-r-4 border-green-300"></td><td class="input-cell"></td><td class="input-cell border-r-4 border-green-300"></td><td class="input-cell"></td><td class="input-cell"></td></tr>
-                        <tr class="border-b-4 border-green-300"><td class="task-name h-[38px] border-r-4 border-green-300"></td><td class="input-cell"></td><td class="input-cell border-r-4 border-green-300"></td><td class="input-cell"></td><td class="input-cell border-r-4 border-green-300"></td><td class="input-cell"></td><td class="input-cell"></td></tr>
+                        <tr>
+                           <td class="task-name-col thick-right-border"></td><td></td><td class="thick-right-border"></td><td></td><td class="thick-right-border"></td><td></td><td class="thick-right-border"></td>
+                        </tr>
                     </tbody>
                 </table>
             </section>
-        </main>
-        
-        <footer class="mt-auto pt-4">
-             <section>
-                <h2 class="section-title">📝 OBSERVACIONES</h2>
-                <div class="border-2 border-dashed border-green-200 rounded-lg p-2" style="min-height: 100px;"></div>
+
+            <!-- Observaciones -->
+            <section>
+                <h2 class="section-title">📝 Observaciones</h2>
+                <div class="h-32 p-2 border border-gray-300 rounded-md"></div>
             </section>
-        </footer>
+        </main>
     </div>
 </body>
 </html>
