@@ -65,7 +65,7 @@
             font-size: 1.25rem;
             font-weight: 700;
             color: #047857; /* Verde principal */
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem; /* Reducido para juntar título y tabla */
         }
         .thick-right-border {
             border-right: 3px solid #047857;
@@ -76,6 +76,10 @@
         .filled-cell {
             background-color: #f3f4f6; /* Gris claro */
         }
+        .empty-row td {
+            padding-top: 1rem; /* 16px - Aumentado para más espacio */
+            padding-bottom: 1rem; /* 16px - Aumentado para más espacio */
+        }
     </style>
 </head>
 <body>
@@ -83,7 +87,12 @@
     <div class="content-container">
         <header class="text-center mb-8">
             <h1 class="text-3xl font-bold text-green-800 tracking-wider">PLANIFICADOR SEMANAL</h1>
-            <p class="text-md text-gray-500 mt-2">Seguimiento de Tareas Diarias y Semanales</p>
+            <div class="mt-4 text-lg text-gray-600 flex items-center justify-center space-x-4">
+                <span class="font-semibold">Semana del:</span>
+                <span class="inline-block w-40 border-b-2 border-gray-400 border-dotted"></span>
+                <span class="font-semibold">al:</span>
+                <span class="inline-block w-40 border-b-2 border-gray-400 border-dotted"></span>
+            </div>
         </header>
 
         <main>
@@ -115,13 +124,13 @@
                             <td class="task-name-col">Revisión de embudo de garantías</td>
                             <td></td><td></td><td></td><td></td><td></td><td class="thick-right-border"></td>
                         </tr>
-                        <tr>
+                        <tr class="empty-row">
                             <td class="task-name-col"></td><td></td><td></td><td></td><td></td><td></td><td class="thick-right-border"></td>
                         </tr>
-                        <tr>
+                        <tr class="empty-row">
                             <td class="task-name-col"></td><td></td><td></td><td></td><td></td><td></td><td class="thick-right-border"></td>
                         </tr>
-                         <tr>
+                         <tr class="empty-row">
                             <td class="task-name-col"></td><td></td><td></td><td></td><td></td><td></td><td class="thick-right-border"></td>
                         </tr>
                     </tbody>
@@ -203,13 +212,13 @@
                             <td class="task-name-col thick-right-border">Revisión de cuentas de clientes - (1)</td>
                             <td></td><td class="thick-right-border"></td><td class="filled-cell"></td><td class="filled-cell thick-right-border"></td><td class="filled-cell"></td><td class="filled-cell thick-right-border"></td>
                         </tr>
-                         <tr>
+                         <tr class="empty-row">
                             <td class="task-name-col thick-right-border"></td><td></td><td class="thick-right-border"></td><td></td><td class="thick-right-border"></td><td></td><td class="thick-right-border"></td>
                         </tr>
-                        <tr>
+                        <tr class="empty-row">
                            <td class="task-name-col thick-right-border"></td><td></td><td class="thick-right-border"></td><td></td><td class="thick-right-border"></td><td></td><td class="thick-right-border"></td>
                         </tr>
-                        <tr>
+                        <tr class="empty-row">
                            <td class="task-name-col thick-right-border"></td><td></td><td class="thick-right-border"></td><td></td><td class="thick-right-border"></td><td></td><td class="thick-right-border"></td>
                         </tr>
                     </tbody>
