@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Tareas y Descripciones</title>
+    <title>Planificador Semanal de Tareas</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,7 +20,6 @@
                 background-color: #ffffff;
             }
             .content-container {
-                /* Para impresión, eliminamos cualquier estilo de contenedor */
                 padding: 0;
                 margin: 0;
                 box-shadow: none;
@@ -34,118 +33,193 @@
             margin: 0 auto; /* Centrar el contenido */
             padding: 2rem; /* Espaciado para la vista en pantalla */
         }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            table-layout: fixed;
+        }
+        th, td {
+            border: 1px solid #a7f3d0; /* Verde claro */
+            padding: 8px;
+            text-align: center;
+            font-size: 11px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        th {
+            background-color: #d1fae5; /* Verde muy claro */
+            font-weight: 600;
+            color: #065f46; /* Verde oscuro */
+        }
+        td {
+            color: #374151;
+        }
+        .task-name-col {
+            width: 40%; /* Aumentado para dar más espacio al nombre de la tarea */
+            text-align: left;
+            font-weight: 500;
+            white-space: normal;
+        }
         .section-title {
-            font-size: 1.25rem; /* 20px */
+            font-size: 1.25rem;
             font-weight: 700;
             color: #047857; /* Verde principal */
-            margin-bottom: 1.5rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid #a7f3d0;
+            margin-bottom: 1rem;
         }
-        .task-block {
-            margin-bottom: 0.875rem; /* Espacio entre tareas (reducido) */
+        .thick-right-border {
+            border-right: 3px solid #047857;
         }
-        .task-title {
-            font-weight: 600; /* Negrita */
-            font-size: 1rem; /* 16px - Texto mediano */
-            color: #1f2937;
+        .thick-left-border {
+             border-left: 3px solid #047857;
         }
-        .task-description {
-            font-style: italic; /* Cursiva */
-            font-size: 0.875rem; /* 14px - Texto más chico */
-            color: #4b5563;
-            padding-left: 1rem; /* Indentación para la descripción */
-            margin-top: 0.25rem;
+        .filled-cell {
+            background-color: #f3f4f6; /* Gris claro */
         }
     </style>
 </head>
 <body>
-    
-    <!-- Contenedor de contenido principal -->
+
     <div class="content-container">
-        <header class="text-center mb-10">
-            <h1 class="text-3xl font-bold text-green-800 tracking-wider">📌 LISTA DE TAREAS Y DESCRIPCIONES</h1>
+        <header class="text-center mb-8">
+            <h1 class="text-3xl font-bold text-green-800 tracking-wider">PLANIFICADOR SEMANAL</h1>
+            <p class="text-md text-gray-500 mt-2">Seguimiento de Tareas Diarias y Semanales</p>
         </header>
 
-        <main class="flex-grow">
-            <!-- Sección de Tareas Diarias -->
+        <main>
+            <!-- Tareas Diarias -->
             <section class="mb-8">
-                <h2 class="section-title">🔄 TAREAS DIARIAS</h2>
-                <div class="task-block">
-                    <p class="task-title">• Revisar canasto de regresados del técnico</p>
-                    <p class="task-description">Ver si hay equipos que hayan vuelto del técnico ayer y procesarlos según su flujo.</p>
-                </div>
-                <div class="task-block">
-                    <p class="task-title">• Revisar canastos de equipos recibidos</p>
-                    <p class="task-description">Trasladar los equipos a su paso correspondiente (Venta Original → paso 4, Poner al 100% → paso 3, Venta Outlet → paso 4). Asegurar que estén cargados y clasificados por batería y/o outlet.</p>
-                </div>
-                <div class="task-block">
-                    <p class="task-title">• Revisión de embudo de garantías</p>
-                    <p class="task-description">Controlar pendientes, devoluciones y seguimientos. Acelerar a Augusto si es necesario.</p>
-                </div>
+                <h2 class="section-title">🔄 Tareas Diarias</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th class="task-name-col">Tarea</th>
+                            <th>Lun</th>
+                            <th>Mar</th>
+                            <th>Mié</th>
+                            <th>Jue</th>
+                            <th>Vie</th>
+                            <th class="thick-right-border">Sáb</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="task-name-col">Revisar canasto de regresados del técnico</td>
+                            <td></td><td></td><td></td><td></td><td></td><td class="thick-right-border"></td>
+                        </tr>
+                        <tr>
+                            <td class="task-name-col">Revisar canastos de equipos recibidos</td>
+                            <td></td><td></td><td></td><td></td><td></td><td class="thick-right-border"></td>
+                        </tr>
+                        <tr>
+                            <td class="task-name-col">Revisión de embudo de garantías</td>
+                            <td></td><td></td><td></td><td></td><td></td><td class="thick-right-border"></td>
+                        </tr>
+                        <tr>
+                            <td class="task-name-col"></td><td></td><td></td><td></td><td></td><td></td><td class="thick-right-border"></td>
+                        </tr>
+                        <tr>
+                            <td class="task-name-col"></td><td></td><td></td><td></td><td></td><td></td><td class="thick-right-border"></td>
+                        </tr>
+                         <tr>
+                            <td class="task-name-col"></td><td></td><td></td><td></td><td></td><td></td><td class="thick-right-border"></td>
+                        </tr>
+                    </tbody>
+                </table>
             </section>
 
-            <hr class="my-6 border-t-2 border-green-100">
+            <!-- Tareas Semanales -->
+            <section class="mb-8">
+                <h2 class="section-title">📅 Tareas Semanales</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th class="task-name-col thick-right-border">Tarea</th>
+                            <th colspan="2" class="thick-right-border">1ª Vez</th>
+                            <th colspan="2" class="thick-right-border">2ª Vez</th>
+                            <th colspan="2" class="thick-right-border">3ª Vez</th>
+                        </tr>
+                        <tr>
+                            <th class="task-name-col thick-right-border"></th>
+                            <th>Día</th><th class="thick-right-border">Quien</th>
+                            <th>Día</th><th class="thick-right-border">Quien</th>
+                            <th>Día</th><th class="thick-right-border">Quien</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                         <tr>
+                            <td class="task-name-col thick-right-border">Comenzar proceso de ingreso de equipos - (3)</td>
+                            <td></td><td class="thick-right-border"></td><td></td><td class="thick-right-border"></td><td></td><td class="thick-right-border"></td>
+                        </tr>
+                        <tr>
+                            <td class="task-name-col thick-right-border">Reordenar canastos de testeo - (2)</td>
+                            <td></td><td class="thick-right-border"></td><td></td><td class="thick-right-border"></td><td class="filled-cell"></td><td class="filled-cell thick-right-border"></td>
+                        </tr>
+                        <tr>
+                           <td class="task-name-col thick-right-border">Ordenar zona de atención a fondo - (2)</td>
+                            <td></td><td class="thick-right-border"></td><td></td><td class="thick-right-border"></td><td class="filled-cell"></td><td class="filled-cell thick-right-border"></td>
+                        </tr>
+                        <tr>
+                            <td class="task-name-col thick-right-border">Limpieza zona interior - (1)</td>
+                            <td></td><td class="thick-right-border"></td><td class="filled-cell"></td><td class="filled-cell thick-right-border"></td><td class="filled-cell"></td><td class="filled-cell thick-right-border"></td>
+                        </tr>
+                        <tr>
+                            <td class="task-name-col thick-right-border">Vaciar tachos de café - (3)</td>
+                            <td></td><td class="thick-right-border"></td><td></td><td class="thick-right-border"></td><td></td><td class="thick-right-border"></td>
+                        </tr>
+                        <tr>
+                           <td class="task-name-col thick-right-border">Vaciar tacho ECO - (1)</td>
+                            <td></td><td class="thick-right-border"></td><td class="filled-cell"></td><td class="filled-cell thick-right-border"></td><td class="filled-cell"></td><td class="filled-cell thick-right-border"></td>
+                        </tr>
+                        <tr>
+                            <td class="task-name-col thick-right-border">Lavar balde de restos de café - (1)</td>
+                            <td></td><td class="thick-right-border"></td><td class="filled-cell"></td><td class="filled-cell thick-right-border"></td><td class="filled-cell"></td><td class="filled-cell thick-right-border"></td>
+                        </tr>
+                        <tr>
+                           <td class="task-name-col thick-right-border">Reponer accesorios - (2)</td>
+                            <td></td><td class="thick-right-border"></td><td></td><td class="thick-right-border"></td><td class="filled-cell"></td><td class="filled-cell thick-right-border"></td>
+                        </tr>
+                         <tr>
+                            <td class="task-name-col thick-right-border">Stock de accesorios - (1)</td>
+                            <td></td><td class="thick-right-border"></td><td class="filled-cell"></td><td class="filled-cell thick-right-border"></td><td class="filled-cell"></td><td class="filled-cell thick-right-border"></td>
+                        </tr>
+                        <tr>
+                           <td class="task-name-col thick-right-border">Stock rápido de teléfonos - (1)</td>
+                            <td></td><td class="thick-right-border"></td><td class="filled-cell"></td><td class="filled-cell thick-right-border"></td><td class="filled-cell"></td><td class="filled-cell thick-right-border"></td>
+                        </tr>
+                        <tr>
+                            <td class="task-name-col thick-right-border">Máquina de café + insumos - (1)</td>
+                            <td></td><td class="thick-right-border"></td><td class="filled-cell"></td><td class="filled-cell thick-right-border"></td><td class="filled-cell"></td><td class="filled-cell thick-right-border"></td>
+                        </tr>
+                        <tr>
+                            <td class="task-name-col thick-right-border">Revisión de viejitos - (1)</td>
+                            <td></td><td class="thick-right-border"></td><td class="filled-cell"></td><td class="filled-cell thick-right-border"></td><td class="filled-cell"></td><td class="filled-cell thick-right-border"></td>
+                        </tr>
+                        <tr>
+                            <td class="task-name-col thick-right-border">Post-procesado de viejitos - (1)</td>
+                            <td></td><td class="thick-right-border"></td><td class="filled-cell"></td><td class="filled-cell thick-right-border"></td><td class="filled-cell"></td><td class="filled-cell thick-right-border"></td>
+                        </tr>
+                        <tr>
+                            <td class="task-name-col thick-right-border">Revisión de cuentas de clientes - (1)</td>
+                            <td></td><td class="thick-right-border"></td><td class="filled-cell"></td><td class="filled-cell thick-right-border"></td><td class="filled-cell"></td><td class="filled-cell thick-right-border"></td>
+                        </tr>
+                         <tr>
+                            <td class="task-name-col thick-right-border"></td><td></td><td class="thick-right-border"></td><td></td><td class="thick-right-border"></td><td></td><td class="thick-right-border"></td>
+                        </tr>
+                        <tr>
+                           <td class="task-name-col thick-right-border"></td><td></td><td class="thick-right-border"></td><td></td><td class="thick-right-border"></td><td></td><td class="thick-right-border"></td>
+                        </tr>
+                        <tr>
+                           <td class="task-name-col thick-right-border"></td><td></td><td class="thick-right-border"></td><td></td><td class="thick-right-border"></td><td></td><td class="thick-right-border"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
 
-            <!-- Sección de Tareas Semanales -->
+            <!-- Observaciones -->
             <section>
-                <h2 class="section-title">📅 TAREAS SEMANALES / VARIAS VECES POR SEMANA</h2>
-                <div class="task-block">
-                    <p class="task-title">• Ingresos de equipos (cuando se dé aviso)</p>
-                    <p class="task-description">Revisar canastos de ingresos y comenzar proceso solo cuando Marcos o Augusto confirmen un lote nuevo.</p>
-                </div>
-                <div class="task-block">
-                    <p class="task-title">• Reordenar canastos de testeo (2 veces/semana)</p>
-                    <p class="task-description">Colocar los 5 canastos sobre la mesa y revisar insumos: alcohol, espátula, soplador, cepillo, lapicera, pinzas, separador, planillas, block, trapo, etiquetas.</p>
-                </div>
-                <div class="task-block">
-                    <p class="task-title">• Ordenar zona de atención a fondo (2 veces/semana)</p>
-                    <p class="task-description">Despejar mesas, ordenar cajón de juguetes, alinear sillas/sillones, limpiar manchas, cables, trapos con Blem, barrer si hace falta.</p>
-                </div>
-                <div class="task-block">
-                    <p class="task-title">• Limpieza zona interior (1 vez/semana o según uso)</p>
-                    <p class="task-description">Mesa de almuerzo, barrer restos, controlar tuppers y comida en heladera.</p>
-                </div>
-                 <div class="task-block">
-                    <p class="task-title">• Vaciar tachos de café (3 veces/semana)</p>
-                    <p class="task-description">Vaciar y reponer bolsas en el tacho redondo (cuidado con residuos húmedos).</p>
-                </div>
-                <div class="task-block">
-                    <p class="task-title">• Vaciar tacho ECO (1 vez/semana)</p>
-                    <p class="task-description">Revisión y reposición de bolsa.</p>
-                </div>
-                <div class="task-block">
-                    <p class="task-title">• Lavar balde de restos de café (1 vez/semana)</p>
-                    <p class="task-description">Llevar al baño el balde colgado en ventana, vaciar y enjuagar con agua.</p>
-                </div>
-                <div class="task-block">
-                    <p class="task-title">• Reponer accesorios (2 veces/semana)</p>
-                    <p class="task-description">Cargadores gratis, cables, bolsas hidrogel.</p>
-                </div>
-                <div class="task-block">
-                    <p class="task-title">• Stock de accesorios (1 vez/semana)</p>
-                    <p class="task-description">Revisar mueble, ordenar, reponer faltantes y pasar lista al grupo.</p>
-                </div>
-                <div class="task-block">
-                    <p class="task-title">• Stock rápido de teléfonos (1 vez/semana)</p>
-                    <p class="task-description">Conteo en todos los lugares posibles y reporte de inconsistencias.</p>
-                </div>
-                 <div class="task-block">
-                    <p class="task-title">• Máquina de café + insumos (1 vez/semana)</p>
-                    <p class="task-description">Limpiar interior/exterior, reponer azúcar, palitos, edulcorante, vasos, vaciar fichas. Reportar con foto si: café ≤ 1, leche ≤ 4, chocolate ≤ 4.</p>
-                </div>
-                <div class="task-block">
-                    <p class="task-title">• Revisión de “viejitos” (1 vez/semana)</p>
-                    <p class="task-description">Ver equipos con muchos días en stock. Identificar causas (batería, precio, falla, detalles estéticos) y proponer solución. Reportar al grupo y colocar en canasto de Viejitos.</p>
-                </div>
-                <div class="task-block">
-                    <p class="task-title">• Post-procesado de viejitos (1 vez/semana)</p>
-                    <p class="task-description">Ejecutar cambios decididos: mover a outlet, técnico, guardar, etc.</p>
-                </div>
-                 <div class="task-block">
-                    <p class="task-title">• Revisión de cuentas de clientes (1 vez/semana)</p>
-                    <p class="task-description">Controlar saldos grandes a favor o señas caducadas. Corregir, investigar o reportar a Nico.</p>
-                </div>
+                <h2 class="section-title">📝 Observaciones</h2>
+                <div class="h-32 p-2 border border-gray-300 rounded-md"></div>
             </section>
         </main>
     </div>
