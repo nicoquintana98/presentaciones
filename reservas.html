@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoja A4 para Imprimir - Formularios de Reserva</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background-color: #52525b; /* a neutral gray to highlight the page */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem 0;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        .a4-sheet {
+            width: 29.7cm;
+            min-height: 21cm;
+            background-color: white;
+            box-shadow: 0 0 15px rgba(0,0,0,0.3);
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+        }
+
+        .grid-cell {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-right: 1px dashed #a3a3a3;
+            border-bottom: 1px dashed #a3a3a3;
+        }
+
+        /* Remove outer borders for a clean edge */
+        .grid-cell:nth-child(4n) { border-right: none; }
+        .grid-cell:nth-child(n+5) { border-bottom: none; }
+        
+        /* Form Card Styling */
+        .form-card {
+            font-family: 'Montserrat', sans-serif;
+            width: 7cm;
+            height: 10cm;
+        }
+        .form-field { border-bottom: 1px solid #d1d5db; }
+        .date-segment { border-bottom: 1px solid #d1d5db; }
+        .currency-box { border: 1px solid #9ca3af; }
+
+        /* Print-specific styles */
+        @media print {
+            body {
+                background-color: white;
+                padding: 0;
+                margin: 0;
+            }
+            .a4-sheet {
+                box-shadow: none;
+                margin: 0;
+                width: 100%;
+                height: 100%;
+            }
+            .grid-cell {
+                border-color: #ccc;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="a4-sheet">
+        <!-- Form 1 -->
+        <div class="grid-cell">
+            <div class="form-card bg-white p-3 flex flex-col text-[10px]">
+                <h1 class="text-2xl font-bold text-center mb-4 text-gray-800 tracking-wider">RESERVA</h1>
+                <header class="flex justify-between items-center text-[9px] text-gray-700">
+                    <div class="flex items-center gap-1">
+                        <label class="font-semibold">Nro:</label>
+                        <div class="border border-gray-400 rounded w-16 h-[20px]"></div>
+                    </div>
+                    <div class="flex items-center gap-1">
+                        <label class="font-semibold">Fecha:</label>
+                        <div class="flex items-center gap-0.5">
+                            <div class="date-segment w-4 h-[20px]"></div><span class="self-end">/</span>
+                            <div class="date-segment w-4 h-[20px]"></div><span class="self-end">/</span>
+                            <div class="date-segment w-8 h-[20px]"></div>
+                        </div>
+                    </div>
+                </header>
+                <main class="flex-grow flex flex-col gap-4 text-[9px] mt-4">
+                    <div class="flex items-center gap-2"><label class="font-semibold whitespace-nowrap">Cliente:</label><div class="form-field w-full h-[20px]"></div></div>
+                    <div class="flex items-center gap-2"><label class="font-semibold whitespace-nowrap">Equipo (IMEI):</label><div class="form-field w-full h-[20px]"></div></div>
+                    <div class="flex items-center gap-1"><label class="font-semibold whitespace-nowrap">Fecha de Retiro:</label><div class="flex items-center gap-0.5 flex-grow"><div class="date-segment w-4 h-[20px]"></div><span class="self-end">/</span><div class="date-segment w-4 h-[20px]"></div><span class="self-end">/</span><div class="date-segment w-8 h-[20px]"></div></div></div>
+                    <div class="flex items-center gap-2 justify-end mt-1"><label class="font-semibold whitespace-nowrap">Precio Final:</label><div class="currency-box rounded w-32 h-[20px] flex items-center px-1"><span class="text-gray-500 font-semibold mr-1">USD</span></div></div>
+                    <div class="flex items-center gap-2 justify-end"><label class="font-semibold whitespace-nowrap">Seña:</label><div class="currency-box rounded w-32 h-[20px] flex items-center px-1"><span class="text-gray-500 font-semibold mr-1">USD</span></div></div>
+                    <div class="flex items-center gap-2 mt-1"><label class="font-semibold whitespace-nowrap">Entrega equipo:</label><div class="form-field w-full h-[20px]"></div></div>
+                    <div class="flex items-center gap-2 mt-1"><label class="font-extrabold whitespace-nowrap text-black">Saldo:</label><div class="border-2 border-gray-800 rounded h-[22px] flex-grow flex items-center px-1"><span class="text-gray-800 font-bold mr-1">USD</span></div></div>
+                </main>
+                <footer class="mt-auto pt-1 flex flex-col"><label class="font-semibold text-[9px] text-gray-700 whitespace-nowrap">Notas:</label><div class="flex-grow min-h-[35px]"></div></footer>
+            </div>
+        </div>
+        <!-- Form 2 -->
+        <div class="grid-cell">
+            <div class="form-card bg-white p-3 flex flex-col text-[10px]">
+                <h1 class="text-2xl font-bold text-center mb-4 text-gray-800 tracking-wider">RESERVA</h1>
+                <header class="flex justify-between items-center text-[9px] text-gray-700">
+                    <div class="flex items-center gap-1">
+                        <label class="font-semibold">Nro:</label>
+                        <div class="border border-gray-400 rounded w-16 h-[20px]"></div>
+                    </div>
+                    <div class="flex items-center gap-1">
+                        <label class="font-semibold">Fecha:</label>
+                        <div class="flex items-center gap-0.5">
+                            <div class="date-segment w-4 h-[20px]"></div><span class="self-end">/</span>
+                            <div class="date-segment w-4 h-[20px]"></div><span class="self-end">/</span>
+                            <div class="date-segment w-8 h-[20px]"></div>
+                        </div>
+                    </div>
+                </header>
+                <main class="flex-grow flex flex-col gap-4 text-[9px] mt-4">
+                    <div class="flex items-center gap-2"><label class="font-semibold whitespace-nowrap">Cliente:</label><div class="form-field w-full h-[20px]"></div></div>
+                    <div class="flex items-center gap-2"><label class="font-semibold whitespace-nowrap">Equipo (IMEI):</label><div class="form-field w-full h-[20px]"></div></div>
+                    <div class="flex items-center gap-1"><label class="font-semibold whitespace-nowrap">Fecha de Retiro:</label><div class="flex items-center gap-0.5 flex-grow"><div class="date-segment w-4 h-[20px]"></div><span class="self-end">/</span><div class="date-segment w-4 h-[20px]"></div><span class="self-end">/</span><div class="date-segment w-8 h-[20px]"></div></div></div>
+                    <div class="flex items-center gap-2 justify-end mt-1"><label class="font-semibold whitespace-nowrap">Precio Final:</label><div class="currency-box rounded w-32 h-[20px] flex items-center px-1"><span class="text-gray-500 font-semibold mr-1">USD</span></div></div>
+                    <div class="flex items-center gap-2 justify-end"><label class="font-semibold whitespace-nowrap">Seña:</label><div class="currency-box rounded w-32 h-[20px] flex items-center px-1"><span class="text-gray-500 font-semibold mr-1">USD</span></div></div>
+                    <div class="flex items-center gap-2 mt-1"><label class="font-semibold whitespace-nowrap">Entrega equipo:</label><div class="form-field w-full h-[20px]"></div></div>
+                    <div class="flex items-center gap-2 mt-1"><label class="font-extrabold whitespace-nowrap text-black">Saldo:</label><div class="border-2 border-gray-800 rounded h-[22px] flex-grow flex items-center px-1"><span class="text-gray-800 font-bold mr-1">USD</span></div></div>
+                </main>
+                <footer class="mt-auto pt-1 flex flex-col"><label class="font-semibold text-[9px] text-gray-700 whitespace-nowrap">Notas:</label><div class="flex-grow min-h-[35px]"></div></footer>
+            </div>
+        </div>
+        <!-- Form 3 -->
+        <div class="grid-cell">
+            <div class="form-card bg-white p-3 flex flex-col text-[10px]">
+                <h1 class="text-2xl font-bold text-center mb-4 text-gray-800 tracking-wider">RESERVA</h1>
+                <header class="flex justify-between items-center text-[9px] text-gray-700">
+                    <div class="flex items-center gap-1">
+                        <label class="font-semibold">Nro:</label>
+                        <div class="border border-gray-400 rounded w-16 h-[20px]"></div>
+                    </div>
+                    <div class="flex items-center gap-1">
+                        <label class="font-semibold">Fecha:</label>
+                        <div class="flex items-center gap-0.5">
+                            <div class="date-segment w-4 h-[20px]"></div><span class="self-end">/</span>
+                            <div class="date-segment w-4 h-[20px]"></div><span class="self-end">/</span>
+                            <div class="date-segment w-8 h-[20px]"></div>
+                        </div>
+                    </div>
+                </header>
+                <main class="flex-grow flex flex-col gap-4 text-[9px] mt-4">
+                    <div class="flex items-center gap-2"><label class="font-semibold whitespace-nowrap">Cliente:</label><div class="form-field w-full h-[20px]"></div></div>
+                    <div class="flex items-center gap-2"><label class="font-semibold whitespace-nowrap">Equipo (IMEI):</label><div class="form-field w-full h-[20px]"></div></div>
+                    <div class="flex items-center gap-1"><label class="font-semibold whitespace-nowrap">Fecha de Retiro:</label><div class="flex items-center gap-0.5 flex-grow"><div class="date-segment w-4 h-[20px]"></div><span class="self-end">/</span><div class="date-segment w-4 h-[20px]"></div><span class="self-end">/</span><div class="date-segment w-8 h-[20px]"></div></div></div>
+                    <div class="flex items-center gap-2 justify-end mt-1"><label class="font-semibold whitespace-nowrap">Precio Final:</label><div class="currency-box rounded w-32 h-[20px] flex items-center px-1"><span class="text-gray-500 font-semibold mr-1">USD</span></div></div>
+                    <div class="flex items-center gap-2 justify-end"><label class="font-semibold whitespace-nowrap">Seña:</label><div class="currency-box rounded w-32 h-[20px] flex items-center px-1"><span class="text-gray-500 font-semibold mr-1">USD</span></div></div>
+                    <div class="flex items-center gap-2 mt-1"><label class="font-semibold whitespace-nowrap">Entrega equipo:</label><div class="form-field w-full h-[20px]"></div></div>
+                    <div class="flex items-center gap-2 mt-1"><label class="font-extrabold whitespace-nowrap text-black">Saldo:</label><div class="border-2 border-gray-800 rounded h-[22px] flex-grow flex items-center px-1"><span class="text-gray-800 font-bold mr-1">USD</span></div></div>
+                </main>
+                <footer class="mt-auto pt-1 flex flex-col"><label class="font-semibold text-[9px] text-gray-700 whitespace-nowrap">Notas:</label><div class="flex-grow min-h-[35px]"></div></footer>
+            </div>
+        </div>
+        <!-- Form 4 -->
+        <div class="grid-cell">
+            <div class="form-card bg-white p-3 flex flex-col text-[10px]">
+                <h1 class="text-2xl font-bold text-center mb-4 text-gray-800 tracking-wider">RESERVA</h1>
+                <header class="flex justify-between items-center text-[9px] text-gray-700">
+                    <div class="flex items-center gap-1">
+                        <label class="font-semibold">Nro:</label>
+                        <div class="border border-gray-400 rounded w-16 h-[20px]"></div>
+                    </div>
+                    <div class="flex items-center gap-1">
+                        <label class="font-semibold">Fecha:</label>
+                        <div class="flex items-center gap-0.5">
+                            <div class="date-segment w-4 h-[20px]"></div><span class="self-end">/</span>
+                            <div class="date-segment w-4 h-[20px]"></div><span class="self-end">/</span>
+                            <div class="date-segment w-8 h-[20px]"></div>
+                        </div>
+                    </div>
+                </header>
+                <main class="flex-grow flex flex-col gap-4 text-[9px] mt-4">
+                    <div class="flex items-center gap-2"><label class="font-semibold whitespace-nowrap">Cliente:</label><div class="form-field w-full h-[20px]"></div></div>
+                    <div class="flex items-center gap-2"><label class="font-semibold whitespace-nowrap">Equipo (IMEI):</label><div class="form-field w-full h-[20px]"></div></div>
+                    <div class="flex items-center gap-1"><label class="font-semibold whitespace-nowrap">Fecha de Retiro:</label><div class="flex items-center gap-0.5 flex-grow"><div class="date-segment w-4 h-[20px]"></div><span class="self-end">/</span><div class="date-segment w-4 h-[20px]"></div><span class="self-end">/</span><div class="date-segment w-8 h-[20px]"></div></div></div>
+                    <div class="flex items-center gap-2 justify-end mt-1"><label class="font-semibold whitespace-nowrap">Precio Final:</label><div class="currency-box rounded w-32 h-[20px] flex items-center px-1"><span class="text-gray-500 font-semibold mr-1">USD</span></div></div>
+                    <div class="flex items-center gap-2 justify-end"><label class="font-semibold whitespace-nowrap">Seña:</label><div class="currency-box rounded w-32 h-[20px] flex items-center px-1"><span class="text-gray-500 font-semibold mr-1">USD</span></div></div>
+                    <div class="flex items-center gap-2 mt-1"><label class="font-semibold whitespace-nowrap">Entrega equipo:</label><div class="form-field w-full h-[20px]"></div></div>
+                    <div class="flex items-center gap-2 mt-1"><label class="font-extrabold whitespace-nowrap text-black">Saldo:</label><div class="border-2 border-gray-800 rounded h-[22px] flex-grow flex items-center px-1"><span class="text-gray-800 font-bold mr-1">USD</span></div></div>
+                </main>
+                <footer class="mt-auto pt-1 flex flex-col"><label class="font-semibold text-[9px] text-gray-700 whitespace-nowrap">Notas:</label><div class="flex-grow min-h-[35px]"></div></footer>
+            </div>
+        </div>
+        <!-- Form 5 -->
+        <div class="grid-cell">
+            <div class="form-card bg-white p-3 flex flex-col text-[10px]">
+                <h1 class="text-2xl font-bold text-center mb-4 text-gray-800 tracking-wider">RESERVA</h1>
+                <header class="flex justify-between items-center text-[9px] text-gray-700">
+                    <div class="flex items-center gap-1">
+                        <label class="font-semibold">Nro:</label>
+                        <div class="border border-gray-400 rounded w-16 h-[20px]"></div>
+                    </div>
+                    <div class="flex items-center gap-1">
+                        <label class="font-semibold">Fecha:</label>
+                        <div class="flex items-center gap-0.5">
+                            <div class="date-segment w-4 h-[20px]"></div><span class="self-end">/</span>
+                            <div class="date-segment w-4 h-[20px]"></div><span class="self-end">/</span>
+                            <div class="date-segment w-8 h-[20px]"></div>
+                        </div>
+                    </div>
+                </header>
+                <main class="flex-grow flex flex-col gap-4 text-[9px] mt-4">
+                    <div class="flex items-center gap-2"><label class="font-semibold whitespace-nowrap">Cliente:</label><div class="form-field w-full h-[20px]"></div></div>
+                    <div class="flex items-center gap-2"><label class="font-semibold whitespace-nowrap">Equipo (IMEI):</label><div class="form-field w-full h-[20px]"></div></div>
+                    <div class="flex items-center gap-1"><label class="font-semibold whitespace-nowrap">Fecha de Retiro:</label><div class="flex items-center gap-0.5 flex-grow"><div class="date-segment w-4 h-[20px]"></div><span class="self-end">/</span><div class="date-segment w-4 h-[20px]"></div><span class="self-end">/</span><div class="date-segment w-8 h-[20px]"></div></div></div>
+                    <div class="flex items-center gap-2 justify-end mt-1"><label class="font-semibold whitespace-nowrap">Precio Final:</label><div class="currency-box rounded w-32 h-[20px] flex items-center px-1"><span class="text-gray-500 font-semibold mr-1">USD</span></div></div>
+                    <div class="flex items-center gap-2 justify-end"><label class="font-semibold whitespace-nowrap">Seña:</label><div class="currency-box rounded w-32 h-[20px] flex items-center px-1"><span class="text-gray-500 font-semibold mr-1">USD</span></div></div>
+                    <div class="flex items-center gap-2 mt-1"><label class="font-semibold whitespace-nowrap">Entrega equipo:</label><div class="form-field w-full h-[20px]"></div></div>
+                    <div class="flex items-center gap-2 mt-1"><label class="font-extrabold whitespace-nowrap text-black">Saldo:</label><div class="border-2 border-gray-800 rounded h-[22px] flex-grow flex items-center px-1"><span class="text-gray-800 font-bold mr-1">USD</span></div></div>
+                </main>
+                <footer class="mt-auto pt-1 flex flex-col"><label class="font-semibold text-[9px] text-gray-700 whitespace-nowrap">Notas:</label><div class="flex-grow min-h-[35px]"></div></footer>
+            </div>
+        </div>
+        <!-- Form 6 -->
+        <div class="grid-cell">
+            <div class="form-card bg-white p-3 flex flex-col text-[10px]">
+                <h1 class="text-2xl font-bold text-center mb-4 text-gray-800 tracking-wider">RESERVA</h1>
+                <header class="flex justify-between items-center text-[9px] text-gray-700">
+                    <div class="flex items-center gap-1">
+                        <label class="font-semibold">Nro:</label>
+                        <div class="border border-gray-400 rounded w-16 h-[20px]"></div>
+                    </div>
+                    <div class="flex items-center gap-1">
+                        <label class="font-semibold">Fecha:</label>
+                        <div class="flex items-center gap-0.5">
+                            <div class="date-segment w-4 h-[20px]"></div><span class="self-end">/</span>
+                            <div class="date-segment w-4 h-[20px]"></div><span class="self-end">/</span>
+                            <div class="date-segment w-8 h-[20px]"></div>
+                        </div>
+                    </div>
+                </header>
+                <main class="flex-grow flex flex-col gap-4 text-[9px] mt-4">
+                    <div class="flex items-center gap-2"><label class="font-semibold whitespace-nowrap">Cliente:</label><div class="form-field w-full h-[20px]"></div></div>
+                    <div class="flex items-center gap-2"><label class="font-semibold whitespace-nowrap">Equipo (IMEI):</label><div class="form-field w-full h-[20px]"></div></div>
+                    <div class="flex items-center gap-1"><label class="font-semibold whitespace-nowrap">Fecha de Retiro:</label><div class="flex items-center gap-0.5 flex-grow"><div class="date-segment w-4 h-[20px]"></div><span class="self-end">/</span><div class="date-segment w-4 h-[20px]"></div><span class="self-end">/</span><div class="date-segment w-8 h-[20px]"></div></div></div>
+                    <div class="flex items-center gap-2 justify-end mt-1"><label class="font-semibold whitespace-nowrap">Precio Final:</label><div class="currency-box rounded w-32 h-[20px] flex items-center px-1"><span class="text-gray-500 font-semibold mr-1">USD</span></div></div>
+                    <div class="flex items-center gap-2 justify-end"><label class="font-semibold whitespace-nowrap">Seña:</label><div class="currency-box rounded w-32 h-[20px] flex items-center px-1"><span class="text-gray-500 font-semibold mr-1">USD</span></div></div>
+                    <div class="flex items-center gap-2 mt-1"><label class="font-semibold whitespace-nowrap">Entrega equipo:</label><div class="form-field w-full h-[20px]"></div></div>
+                    <div class="flex items-center gap-2 mt-1"><label class="font-extrabold whitespace-nowrap text-black">Saldo:</label><div class="border-2 border-gray-800 rounded h-[22px] flex-grow flex items-center px-1"><span class="text-gray-800 font-bold mr-1">USD</span></div></div>
+                </main>
+                <footer class="mt-auto pt-1 flex flex-col"><label class="font-semibold text-[9px] text-gray-700 whitespace-nowrap">Notas:</label><div class="flex-grow min-h-[35px]"></div></footer>
+            </div>
+        </div>
+        <!-- Form 7 -->
+        <div class="grid-cell">
+            <div class="form-card bg-white p-3 flex flex-col text-[10px]">
+                <h1 class="text-2xl font-bold text-center mb-4 text-gray-800 tracking-wider">RESERVA</h1>
+                <header class="flex justify-between items-center text-[9px] text-gray-700">
+                    <div class="flex items-center gap-1">
+                        <label class="font-semibold">Nro:</label>
+                        <div class="border border-gray-400 rounded w-16 h-[20px]"></div>
+                    </div>
+                    <div class="flex items-center gap-1">
+                        <label class="font-semibold">Fecha:</label>
+                        <div class="flex items-center gap-0.5">
+                            <div class="date-segment w-4 h-[20px]"></div><span class="self-end">/</span>
+                            <div class="date-segment w-4 h-[20px]"></div><span class="self-end">/</span>
+                            <div class="date-segment w-8 h-[20px]"></div>
+                        </div>
+                    </div>
+                </header>
+                <main class="flex-grow flex flex-col gap-4 text-[9px] mt-4">
+                    <div class="flex items-center gap-2"><label class="font-semibold whitespace-nowrap">Cliente:</label><div class="form-field w-full h-[20px]"></div></div>
+                    <div class="flex items-center gap-2"><label class="font-semibold whitespace-nowrap">Equipo (IMEI):</label><div class="form-field w-full h-[20px]"></div></div>
+                    <div class="flex items-center gap-1"><label class="font-semibold whitespace-nowrap">Fecha de Retiro:</label><div class="flex items-center gap-0.5 flex-grow"><div class="date-segment w-4 h-[20px]"></div><span class="self-end">/</span><div class="date-segment w-4 h-[20px]"></div><span class="self-end">/</span><div class="date-segment w-8 h-[20px]"></div></div></div>
+                    <div class="flex items-center gap-2 justify-end mt-1"><label class="font-semibold whitespace-nowrap">Precio Final:</label><div class="currency-box rounded w-32 h-[20px] flex items-center px-1"><span class="text-gray-500 font-semibold mr-1">USD</span></div></div>
+                    <div class="flex items-center gap-2 justify-end"><label class="font-semibold whitespace-nowrap">Seña:</label><div class="currency-box rounded w-32 h-[20px] flex items-center px-1"><span class="text-gray-500 font-semibold mr-1">USD</span></div></div>
+                    <div class="flex items-center gap-2 mt-1"><label class="font-semibold whitespace-nowrap">Entrega equipo:</label><div class="form-field w-full h-[20px]"></div></div>
+                    <div class="flex items-center gap-2 mt-1"><label class="font-extrabold whitespace-nowrap text-black">Saldo:</label><div class="border-2 border-gray-800 rounded h-[22px] flex-grow flex items-center px-1"><span class="text-gray-800 font-bold mr-1">USD</span></div></div>
+                </main>
+                <footer class="mt-auto pt-1 flex flex-col"><label class="font-semibold text-[9px] text-gray-700 whitespace-nowrap">Notas:</label><div class="flex-grow min-h-[35px]"></div></footer>
+            </div>
+        </div>
+        <!-- Form 8 -->
+        <div class="grid-cell">
+            <div class="form-card bg-white p-3 flex flex-col text-[10px]">
+                <h1 class="text-2xl font-bold text-center mb-4 text-gray-800 tracking-wider">RESERVA</h1>
+                <header class="flex justify-between items-center text-[9px] text-gray-700">
+                    <div class="flex items-center gap-1">
+                        <label class="font-semibold">Nro:</label>
+                        <div class="border border-gray-400 rounded w-16 h-[20px]"></div>
+                    </div>
+                    <div class="flex items-center gap-1">
+                        <label class="font-semibold">Fecha:</label>
+                        <div class="flex items-center gap-0.5">
+                            <div class="date-segment w-4 h-[20px]"></div><span class="self-end">/</span>
+                            <div class="date-segment w-4 h-[20px]"></div><span class="self-end">/</span>
+                            <div class="date-segment w-8 h-[20px]"></div>
+                        </div>
+                    </div>
+                </header>
+                <main class="flex-grow flex flex-col gap-4 text-[9px] mt-4">
+                    <div class="flex items-center gap-2"><label class="font-semibold whitespace-nowrap">Cliente:</label><div class="form-field w-full h-[20px]"></div></div>
+                    <div class="flex items-center gap-2"><label class="font-semibold whitespace-nowrap">Equipo (IMEI):</label><div class="form-field w-full h-[20px]"></div></div>
+                    <div class="flex items-center gap-1"><label class="font-semibold whitespace-nowrap">Fecha de Retiro:</label><div class="flex items-center gap-0.5 flex-grow"><div class="date-segment w-4 h-[20px]"></div><span class="self-end">/</span><div class="date-segment w-4 h-[20px]"></div><span class="self-end">/</span><div class="date-segment w-8 h-[20px]"></div></div></div>
+                    <div class="flex items-center gap-2 justify-end mt-1"><label class="font-semibold whitespace-nowrap">Precio Final:</label><div class="currency-box rounded w-32 h-[20px] flex items-center px-1"><span class="text-gray-500 font-semibold mr-1">USD</span></div></div>
+                    <div class="flex items-center gap-2 justify-end"><label class="font-semibold whitespace-nowrap">Seña:</label><div class="currency-box rounded w-32 h-[20px] flex items-center px-1"><span class="text-gray-500 font-semibold mr-1">USD</span></div></div>
+                    <div class="flex items-center gap-2 mt-1"><label class="font-semibold whitespace-nowrap">Entrega equipo:</label><div class="form-field w-full h-[20px]"></div></div>
+                    <div class="flex items-center gap-2 mt-1"><label class="font-extrabold whitespace-nowrap text-black">Saldo:</label><div class="border-2 border-gray-800 rounded h-[22px] flex-grow flex items-center px-1"><span class="text-gray-800 font-bold mr-1">USD</span></div></div>
+                </main>
+                <footer class="mt-auto pt-1 flex flex-col"><label class="font-semibold text-[9px] text-gray-700 whitespace-nowrap">Notas:</label><div class="flex-grow min-h-[35px]"></div></footer>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+
