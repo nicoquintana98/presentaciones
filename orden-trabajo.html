@@ -49,7 +49,6 @@
             display: flex;
             align-items: center;
             gap: 0.5rem; /* 8px */
-            font-size: 0.875rem; /* 14px */
         }
         .checkbox {
             width: 1.125rem; /* 18px */
@@ -106,32 +105,40 @@
                 <div class="line-textarea h-5"></div>
                 <div class="line-textarea h-5"></div>
                 <div class="line-textarea h-5"></div>
-                <div class="line-textarea h-5"></div>
             </div>
         </section>
 
         <!-- Chequeo de Pre-Entrada -->
         <section class="mb-4">
-            <h2 class="section-title">Chequeo de Equipo</h2>
-            <div class="grid grid-cols-3 gap-x-6 gap-y-2">
-                <div class="checkbox-item"><div class="checkbox"></div><span>Piezas reemplazadas</span><span class="text-xs text-gray-400 ml-1">SI/NO</span></div>
-                <div class="checkbox-item"><div class="checkbox"></div><span>Cartel batería</span><span class="text-xs text-gray-400 ml-1">SI/NO</span></div>
-                <div class="checkbox-item"><div class="checkbox"></div><span>Wifi</span></div>
-                <div class="checkbox-item"><div class="checkbox"></div><span>True Tone</span></div>
-                <div class="checkbox-item"><div class="checkbox"></div><span>Linterna</span></div>
-                <div class="checkbox-item"><div class="checkbox"></div><span>Test táctil</span></div>
-                <div class="checkbox-item"><div class="checkbox"></div><span>Cámara 0,5</span></div>
-                <div class="checkbox-item"><div class="checkbox"></div><span>Cámara x1</span></div>
-                <div class="checkbox-item"><div class="checkbox"></div><span>Cámara zoom</span></div>
-                <div class="checkbox-item"><div class="checkbox"></div><span>Mic Superior</span></div>
-                <div class="checkbox-item"><div class="checkbox"></div><span>Mic Inferior</span></div>
-                <div class="checkbox-item"><div class="checkbox"></div><span>Parlante Superior</span></div>
-                <div class="checkbox-item"><div class="checkbox"></div><span>Parlante Inferior</span></div>
-                <div class="checkbox-item"><div class="checkbox"></div><span>Face ID</span></div>
-                <div class="checkbox-item"><div class="checkbox"></div><span>Botones</span></div>
-                <div class="checkbox-item"><div class="checkbox"></div><span>Pin de carga</span></div>
-                <div class="checkbox-item"></div>
-                <div class="checkbox-item"></div>
+            <h2 class="section-title border-b-0">Chequeo de Equipo</h2>
+            <div class="grid grid-cols-8 gap-x-6">
+                <div class="col-span-5 grid grid-cols-3 gap-x-4 gap-y-1 text-xs">
+                    <div class="checkbox-item"><div class="checkbox"></div><span>Reemplazos</span><span class="text-gray-400 ml-auto">SI/NO</span></div>
+                    <div class="checkbox-item"><div class="checkbox"></div><span>Aviso Bat.</span><span class="text-gray-400 ml-auto">SI/NO</span></div>
+                    <div class="checkbox-item"><div class="checkbox"></div><span>Wifi</span></div>
+                    <div class="checkbox-item"><div class="checkbox"></div><span>True Tone</span></div>
+                    <div class="checkbox-item"><div class="checkbox"></div><span>Linterna</span></div>
+                    <div class="checkbox-item"><div class="checkbox"></div><span>Test táctil</span></div>
+                    <div class="checkbox-item"><div class="checkbox"></div><span>Cámara 0,5</span></div>
+                    <div class="checkbox-item"><div class="checkbox"></div><span>Cámara x1</span></div>
+                    <div class="checkbox-item"><div class="checkbox"></div><span>Cámara zoom</span></div>
+                    <div class="checkbox-item"><div class="checkbox"></div><span>Selfie</span></div>
+                    <div class="checkbox-item"><div class="checkbox"></div><span>Retrato</span></div>
+                    <div class="checkbox-item"><div class="checkbox"></div><span>Mic Superior</span></div>
+                    <div class="checkbox-item"><div class="checkbox"></div><span>Mic Inferior</span></div>
+                    <div class="checkbox-item"><div class="checkbox"></div><span>Parlante Superior</span></div>
+                    <div class="checkbox-item"><div class="checkbox"></div><span>Parlante Inferior</span></div>
+                    <div class="checkbox-item"><div class="checkbox"></div><span>Face ID</span></div>
+                    <div class="checkbox-item"><div class="checkbox"></div><span>Botones</span></div>
+                    <div class="checkbox-item"><div class="checkbox"></div><span>Pin de carga</span></div>
+                    <div class="checkbox-item"><div class="checkbox"></div><span>Humedad</span></div>
+                    <div class="checkbox-item"><div class="checkbox"></div><span>Pantalla</span></div>
+                </div>
+                <div class="col-span-3 flex flex-col items-center justify-start">
+                    <div class="w-full">
+                        <img src="https://i.ibb.co/fJ7tkML/Gemini-Generated-Image-mmquv7mmquv7mmqu.png" alt="Esquema iPhone para marcar defectos" border="0" class="w-full h-auto">
+                    </div>
+                </div>
             </div>
             <div class="mt-3">
                  <label class="font-medium text-gray-600 text-sm">Observaciones del chequeo:</label>
@@ -171,7 +178,6 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr><td class="h-7 border-b border-gray-200"></td><td class="border-b border-gray-200"></td><td class="border-b border-gray-200"></td></tr>
                     <tr><td class="h-7 border-b border-gray-200"></td><td class="border-b border-gray-200"></td><td class="border-b border-gray-200"></td></tr>
                     <tr><td class="h-7 border-b border-gray-200"></td><td class="border-b border-gray-200"></td><td class="border-b border-gray-200"></td></tr>
                     <tr><td class="h-7 border-b border-gray-200"></td><td class="border-b border-gray-200"></td><td class="border-b border-gray-200"></td></tr>
