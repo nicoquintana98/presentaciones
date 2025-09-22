@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale-1.0">
     <title>Orden de Trabajo - Servicio Técnico de iPhone</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
@@ -27,7 +27,7 @@
             }
         }
         .line-input {
-            border-bottom: 1px solid #d1d5db; /* Lighter gray for a softer look */
+            border-bottom: 1px solid #d1d5db;
             padding-bottom: 4px;
             display: inline-block;
             width: 100%;
@@ -61,7 +61,7 @@
 </head>
 <body>
     
-    <div class="page-container mx-auto p-8 w-[21cm] min-h-[29.7cm] text-gray-800">
+    <div class="page-container mx-auto p-6 w-[21cm] min-h-[29.7cm] text-gray-800">
 
         <!-- Cabecera -->
         <header class="flex justify-between items-start mb-4">
@@ -83,25 +83,25 @@
 
         <!-- Datos del Cliente y Equipo -->
         <section class="mb-4">
-            <h2 class="section-title">Información del Cliente y Equipo</h2>
-            <div class="grid grid-cols-1 gap-y-3 text-sm">
+            <h2 class="section-title border-b-0 pb-0 mb-0">Información del Cliente y Equipo</h2>
+            <div class="grid grid-cols-1 gap-y-3 text-sm mt-1">
                 <div class="grid grid-cols-2 gap-x-12">
                     <div class="flex items-end gap-2"><label class="font-medium text-gray-600 w-20 flex-shrink-0">Cliente:</label><div class="line-input"></div></div>
                     <div class="flex items-end gap-2"><label class="font-medium text-gray-600 w-20 flex-shrink-0">Teléfono:</label><div class="line-input"></div></div>
                 </div>
                 <div class="flex items-end gap-x-6">
-                    <div class="flex items-end gap-2 flex-[2.5]"><label class="font-medium text-gray-600 flex-shrink-0">Modelo:</label><div class="line-input"></div></div>
-                    <div class="flex items-end gap-2 flex-1"><label class="font-medium text-gray-600 flex-shrink-0">GB:</label><div class="line-input"></div></div>
-                    <div class="flex items-end gap-2 flex-1"><label class="font-medium text-gray-600 flex-shrink-0">🔋:</label><div class="line-input"></div></div>
-                    <div class="flex items-end gap-2 flex-1"><label class="font-medium text-gray-600 flex-shrink-0">IMEI:</label><div class="line-input"></div></div>
+                    <div class="flex items-end gap-2 flex-[2.5]"><label class="font-medium text-gray-600 w-16 flex-shrink-0">Modelo:</label><div class="line-input"></div></div>
+                    <div class="flex items-end gap-2 flex-1"><label class="font-medium text-gray-600">GB:</label><div class="line-input"></div></div>
+                    <div class="flex items-end gap-2 flex-1"><label class="font-medium text-gray-600">🔋:</label><div class="line-input"></div></div>
+                    <div class="flex items-end gap-2 flex-1"><label class="font-medium text-gray-600">IMEI:</label><div class="line-input"></div></div>
                 </div>
             </div>
         </section>
 
         <!-- Descripción del Problema -->
         <section class="mb-4">
-            <h2 class="section-title">Descripción del Problema</h2>
-            <div class="space-y-1">
+            <h2 class="section-title border-b-0 pb-0 mb-0">Descripción del Problema</h2>
+            <div class="space-y-1 mt-1">
                 <div class="line-textarea h-5"></div>
                 <div class="line-textarea h-5"></div>
                 <div class="line-textarea h-5"></div>
@@ -111,10 +111,10 @@
         <!-- Chequeo de Pre-Entrada -->
         <section class="mb-4">
             <h2 class="section-title border-b-0">Chequeo de Equipo</h2>
-            <div class="grid grid-cols-8 gap-x-6">
-                <div class="col-span-5 grid grid-cols-3 gap-x-4 gap-y-1 text-xs">
-                    <div class="checkbox-item"><div class="checkbox"></div><span>Reemplazos</span><span class="text-gray-400 ml-auto">SI/NO</span></div>
-                    <div class="checkbox-item"><div class="checkbox"></div><span>Aviso Bat.</span><span class="text-gray-400 ml-auto">SI/NO</span></div>
+            <div class="grid grid-cols-8 gap-x-4 text-xs">
+                <div class="col-span-5 grid grid-cols-3 gap-x-4 gap-y-1">
+                    <div class="checkbox-item"><div class="checkbox"></div><span>Reemplazos <span class="text-gray-400">SI/NO</span></span></div>
+                    <div class="checkbox-item"><div class="checkbox"></div><span>Aviso Bat. <span class="text-gray-400">SI/NO</span></span></div>
                     <div class="checkbox-item"><div class="checkbox"></div><span>Wifi</span></div>
                     <div class="checkbox-item"><div class="checkbox"></div><span>True Tone</span></div>
                     <div class="checkbox-item"><div class="checkbox"></div><span>Linterna</span></div>
@@ -133,61 +133,60 @@
                     <div class="checkbox-item"><div class="checkbox"></div><span>Pin de carga</span></div>
                     <div class="checkbox-item"><div class="checkbox"></div><span>Humedad</span></div>
                     <div class="checkbox-item"><div class="checkbox"></div><span>Pantalla</span></div>
+                    <div class="checkbox-item"></div>
                 </div>
                 <div class="col-span-3 flex flex-col items-center justify-start">
-                    <div class="w-full">
+                    <div class="w-full mx-auto">
                         <img src="https://i.ibb.co/fJ7tkML/Gemini-Generated-Image-mmquv7mmquv7mmqu.png" alt="Esquema iPhone para marcar defectos" border="0" class="w-full h-auto">
                     </div>
                 </div>
             </div>
             <div class="mt-3">
-                 <label class="font-medium text-gray-600 text-sm">Observaciones del chequeo:</label>
-                 <div class="mt-1 space-y-2">
+                <p class="text-sm font-medium text-gray-600 mb-0">Observaciones del chequeo:</p>
+                <div class="space-y-1 mt-1">
                     <div class="line-textarea h-5"></div>
                     <div class="line-textarea h-5"></div>
-                 </div>
+                </div>
             </div>
         </section>
 
         <!-- Firma y Conformidad -->
         <section class="mb-4">
             <h2 class="section-title">Firma y Conformidad</h2>
-            <div class="grid grid-cols-2 gap-x-12">
+            <div class="grid grid-cols-2 gap-x-12 pt-4">
                 <div>
-                    <h3 class="font-semibold text-center mb-2">Recepción</h3>
-                    <div class="line-input mt-4"></div>
-                    <p class="text-center text-xs text-gray-500 mt-1">Firma y Aclaración</p>
+                    <p class="text-center font-semibold mb-8">Recepción</p>
+                    <div class="line-input mb-1"></div>
+                    <p class="text-center text-xs text-gray-500">Firma y Aclaración</p>
                 </div>
                 <div>
-                    <h3 class="font-semibold text-center mb-2">Devolución</h3>
-                    <div class="line-input mt-4"></div>
-                    <p class="text-center text-xs text-gray-500 mt-1">Firma y Aclaración</p>
+                    <p class="text-center font-semibold mb-8">Devolución</p>
+                    <div class="line-input mb-1"></div>
+                    <p class="text-center text-xs text-gray-500">Firma y Aclaración</p>
                 </div>
             </div>
         </section>
 
         <!-- Eventos -->
         <section>
-            <h2 class="section-title">Eventos</h2>
-            <table class="w-full border-collapse text-sm">
-                <thead>
-                    <tr>
-                        <th class="border-b border-gray-300 font-medium text-gray-600 text-left p-2 w-[20%]">Fecha</th>
-                        <th class="border-b border-gray-300 font-medium text-gray-600 text-left p-2 w-[20%]">Tipo</th>
-                        <th class="border-b border-gray-300 font-medium text-gray-600 text-left p-2">Evento</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr><td class="h-7 border-b border-gray-200"></td><td class="border-b border-gray-200"></td><td class="border-b border-gray-200"></td></tr>
-                    <tr><td class="h-7 border-b border-gray-200"></td><td class="border-b border-gray-200"></td><td class="border-b border-gray-200"></td></tr>
-                    <tr><td class="h-7 border-b border-gray-200"></td><td class="border-b border-gray-200"></td><td class="border-b border-gray-200"></td></tr>
-                    <tr><td class="h-7 border-b border-gray-200"></td><td class="border-b border-gray-200"></td><td class="border-b border-gray-200"></td></tr>
-                    <tr><td class="h-7 border-b border-gray-200"></td><td class="border-b border-gray-200"></td><td class="border-b border-gray-200"></td></tr>
-                </tbody>
-            </table>
+            <h2 class="section-title border-b-0 pb-0 mb-0">Eventos</h2>
+            <div class="text-sm mt-1">
+                <div class="grid grid-cols-12 font-medium text-gray-500 border-b border-gray-200">
+                    <div class="col-span-2 p-2">Fecha</div>
+                    <div class="col-span-2 p-2">Tipo</div>
+                    <div class="col-span-8 p-2">Evento</div>
+                </div>
+                <div class="grid grid-cols-12 border-b border-gray-200 h-8"></div>
+                <div class="grid grid-cols-12 border-b border-gray-200 h-8"></div>
+                <div class="grid grid-cols-12 border-b border-gray-200 h-8"></div>
+                <div class="grid grid-cols-12 border-b border-gray-200 h-8"></div>
+                <div class="grid grid-cols-12 border-b border-gray-200 h-8"></div>
+                <div class="grid grid-cols-12 border-b border-gray-200 h-8"></div>
+            </div>
         </section>
+
     </div>
-    
+
 </body>
 </html>
 
